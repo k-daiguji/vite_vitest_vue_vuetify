@@ -5,8 +5,17 @@ import * as directives from "vuetify/directives";
 import "vuetify/styles";
 
 import App from "@/components/App.vue";
+import customTheme from "@/components/customTheme.json";
 
 createApp(App)
-  .provide("message", "Hello!")
-  .use(createVuetify({ components, directives }))
+  .use(
+    createVuetify({
+      components,
+      directives,
+      theme: {
+        defaultTheme: "customTheme",
+        themes: { customTheme },
+      },
+    }),
+  )
   .mount("#app");

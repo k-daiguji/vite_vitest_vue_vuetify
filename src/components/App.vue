@@ -1,13 +1,13 @@
 <script setup lang="ts">
-import { inject } from "vue";
+import { ref } from "vue";
 
-const message = inject<string>("message");
+const detectBtn = ref("Detect");
 </script>
 
 <template>
   <v-app>
     <v-container>
-      <div class="message">{{ message }}</div>
+      <v-btn class="text-capitalize text-primary">{{ detectBtn }}</v-btn>
     </v-container>
   </v-app>
 </template>

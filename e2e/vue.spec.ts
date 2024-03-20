@@ -4,5 +4,7 @@ import { expect, test } from "@playwright/test";
 // https://playwright.dev/docs/intro
 test("visits the app root url", async ({ page }) => {
   await page.goto("/");
-  await expect(page.locator(".message")).toHaveText("Hello!");
+
+  const detectBtn = page.getByRole("button", { name: "Detect" });
+  await expect(detectBtn).toBeVisible();
 });
