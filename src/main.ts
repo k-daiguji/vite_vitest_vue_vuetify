@@ -1,3 +1,4 @@
+import "@mdi/font/css/materialdesignicons.css";
 import { createApp } from "vue";
 import { createVuetify } from "vuetify";
 import * as components from "vuetify/components";
@@ -12,6 +13,7 @@ createApp(App)
     createVuetify({
       components,
       directives,
+      icons: { defaultSet: "mdi" },
       theme: {
         defaultTheme: "customTheme",
         themes: { customTheme },
