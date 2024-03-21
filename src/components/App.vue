@@ -8,6 +8,7 @@ const detectBtn = ref("Detect");
   <v-app>
     <v-container>
       <v-btn class="text-capitalize text-primary">{{ detectBtn }}</v-btn>
+      <v-icon icon="mdi-close" />
     </v-container>
   </v-app>
 </template>
