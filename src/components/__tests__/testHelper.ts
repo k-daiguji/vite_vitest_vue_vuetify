@@ -9,10 +9,14 @@ const vuetify = createVuetify({
   directives,
 });
 
-export const mountComponent = (component: DefineComponent<{}, {}, unknown>) => {
+export const mountComponent = (
+  component: DefineComponent<Record<string, unknown>, {}, unknown>,
+  props?: Record<string, unknown>,
+) => {
   return mount(component, {
     global: {
       plugins: [vuetify],
     },
+    props,
   });
 };
