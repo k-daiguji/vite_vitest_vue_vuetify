@@ -1,20 +1,45 @@
 import { describe, expect, it } from "vitest";
-import { VBtn, VIcon } from "vuetify/components";
+import type { DefineComponent } from "vue";
 
 import App from "@/components/App.vue";
+import BaseTab from "@/components/BaseTab.vue";
 import { mountComponent } from "@/components/__tests__/testHelper";
 
 describe("App.vue", () => {
-  it("App mounted", () => {
-    const text = "Detect";
+  it("App mounted(Fixed length tabs)", () => {
+    const isFixedLength = true;
+    const showTabBodyAnimation = true;
 
     const wrapper = mountComponent(App);
 
-    const vBtn = wrapper.findComponent(VBtn);
-    expect(vBtn.text()).toBe(text);
-    expect(vBtn.classes("text-capitalize")).toBe(true);
-    expect(vBtn.classes("text-primary")).toBe(true);
-    const vIcon = wrapper.findComponent(VIcon);
-    expect(vIcon.classes("mdi-close")).toBe(true);
+    const [baseTab1] = wrapper.findAllComponents<
+      DefineComponent<{
+        isFixedLength: boolean;
+        showTabBodyAnimation: boolean;
+      }>
+    >(BaseTab);
+    const baseTab1Instance = baseTab1.vm;
+    expect(baseTab1Instance.$props.isFixedLength).toBe(isFixedLength);
+    expect(baseTab1Instance.$props.showTabBodyAnimation).toBe(
+      showTabBodyAnimation,
+    );
+  });
+  it("App mounted(Variable length tabs)", () => {
+    const isFixedLength = false;
+    const showTabBodyAnimation = "none";
+
+    const wrapper = mountComponent(App);
+
+    const [, baseTab2] = wrapper.findAllComponents<
+      DefineComponent<{
+        isFixedLength: boolean;
+        showTabBodyAnimation: boolean;
+      }>
+    >(BaseTab);
+    const baseTab2Instance = baseTab2.vm;
+    expect(baseTab2Instance.$props.isFixedLength).toBe(isFixedLength);
+    expect(baseTab2Instance.$props.showTabBodyAnimation).toBe(
+      showTabBodyAnimation,
+    );
   });
 });
