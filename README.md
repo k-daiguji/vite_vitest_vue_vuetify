@@ -1,18 +1,19 @@
 # vite_vitest_vue_vuetify
 
-This template should help get you started developing with Vue 3 in Vite.
+[![npm version](https://img.shields.io/badge/vite-5.2.4-green)](https://www.npmjs.com/)
+[![npm version](https://img.shields.io/badge/vitest-1.4.0-green)](https://nodejs.jp/)
 
-## Recommended IDE Setup
+[![npm version](https://img.shields.io/badge/typescript-5.4.3-green)](https://www.npmjs.com/package/typescript)
+[![npm version](https://img.shields.io/badge/vue-3.4.21-green)](https://www.npmjs.com/package/vue)
+[![npm version](https://img.shields.io/badge/vuetify-3.5.11-green)](https://www.npmjs.com/package/vuetify)
 
-[VSCode](https://code.visualstudio.com/) + [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (and disable Vetur).
+## VScode Extensions
 
-## Type Support for `.vue` Imports in TS
-
-TypeScript cannot handle type information for `.vue` imports by default, so we replace the `tsc` CLI with `vue-tsc` for type checking. In editors, we need [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) to make the TypeScript language service aware of `.vue` types.
-
-## Customize configuration
-
-See [Vite Configuration Reference](https://vitejs.dev/config/).
+- [Vitest](https://marketplace.visualstudio.com/items?itemName=vitest.explorer)
+- [Vue](https://marketplace.visualstudio.com/items?itemName=Vue.volar)
+- [ESLint](https://marketplace.visualstudio.com/items?itemName=dbaeumer.vscode-eslint)
+- [Prettier](https://marketplace.visualstudio.com/items?itemName=esbenp.prettier-vscode)
+- [Code Spell Checker](https://marketplace.visualstudio.com/items?itemName=streetsidesoftware.code-spell-checker)
 
 ## Project Setup
 
