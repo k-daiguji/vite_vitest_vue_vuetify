@@ -16,31 +16,30 @@
   },
   "dependencies": {
     "@mdi/font": "^7.4.47",
-    "vue": "^3.4.21"
+    "vue": "^3.4.30"
   },
   "devDependencies": {
-    "@playwright/test": "^1.43.1",
-    "@rushstack/eslint-patch": "^1.10.2",
+    "@playwright/test": "^1.44.1",
+    "@rushstack/eslint-patch": "^1.10.3",
     "@tsconfig/node20": "^20.1.2",
-    "@types/node": "^20.12.7",
-    "@vitejs/plugin-vue": "^5.0.4",
+    "@types/node": "^20.14.8",
+    "@vitejs/plugin-vue": "^5.0.5",
     "@vue/eslint-config-prettier": "^9.0.0",
-    "@vue/eslint-config-typescript": "^13.0.0",
-    "@vue/test-utils": "^2.4.5",
+    "@vue/test-utils": "^2.4.6",
     "@vue/tsconfig": "^0.5.1",
-    "eslint": "^8.57.0",
-    "eslint-plugin-playwright": "^1.6.0",
-    "eslint-plugin-vue": "^9.24.1",
-    "happy-dom": "^14.7.1",
-    "npm-run-all2": "^6.1.2",
-    "prettier": "^3.2.5",
+    "eslint": "^9.5.0",
+    "eslint-plugin-playwright": "^1.6.2",
+    "eslint-plugin-vue": "^9.26.0",
+    "happy-dom": "^14.12.3",
+    "npm-run-all2": "^6.2.0",
+    "prettier": "^3.3.2",
     "prettier-plugin-organize-imports": "^3.2.4",
-    "typescript": "^5.4.5",
-    "vite": "^5.2.4",
-    "vite-plugin-vue-devtools": "^7.0.27",
+    "typescript": "^5.5.2",
+    "vite": "^5.3.1",
+    "vite-plugin-vue-devtools": "^7.3.4",
     "vite-plugin-vuetify": "^2.0.3",
     "vitest": "^1.5.0",
-    "vue-tsc": "^2.0.13",
-    "vuetify": "^3.5.15"
+    "vue-tsc": "^2.0.22",
+    "vuetify": "^3.6.10"
   }
 }
