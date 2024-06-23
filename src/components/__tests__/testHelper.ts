@@ -1,5 +1,5 @@
 import { mount, shallowMount } from "@vue/test-utils";
-import type { DefineComponent } from "vue";
+import type { DefinedComponent } from "node_modules/@vue/test-utils/dist/types";
 import { createVuetify } from "vuetify";
 import * as components from "vuetify/components";
 import * as directives from "vuetify/directives";
@@ -10,7 +10,7 @@ const vuetify = createVuetify({
 });
 
 export const mountComponent = (
-  component: DefineComponent<Record<string, unknown>, {}, unknown>,
+  component: DefinedComponent,
   props?: Record<string, unknown>,
 ) => {
   return mount(component, {
@@ -22,7 +22,7 @@ export const mountComponent = (
 };
 
 export const shallowMountComponent = (
-  component: DefineComponent<Record<string, unknown>, {}, unknown>,
+  component: DefinedComponent,
   props?: Record<string, unknown>,
 ) => {
   return shallowMount(component, {
