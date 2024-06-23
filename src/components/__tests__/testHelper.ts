@@ -1,4 +1,4 @@
-import { mount } from "@vue/test-utils";
+import { mount, shallowMount } from "@vue/test-utils";
 import type { DefineComponent } from "vue";
 import { createVuetify } from "vuetify";
 import * as components from "vuetify/components";
@@ -14,6 +14,18 @@ export const mountComponent = (
   props?: Record<string, unknown>,
 ) => {
   return mount(component, {
+    global: {
+      plugins: [vuetify],
+    },
+    props,
+  });
+};
+
+export const shallowMountComponent = (
+  component: DefineComponent<Record<string, unknown>, {}, unknown>,
+  props?: Record<string, unknown>,
+) => {
+  return shallowMount(component, {
     global: {
       plugins: [vuetify],
     },
