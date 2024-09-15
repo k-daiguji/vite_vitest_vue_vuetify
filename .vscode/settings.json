@@ -1,0 +1,7 @@
+{
+  "cSpell.words": ["vuetify"],
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "editor.codeActionsOnSave": {
+    "source.organizeImports": "explicit"
+  }
+}

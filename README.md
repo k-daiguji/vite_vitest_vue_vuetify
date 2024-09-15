@@ -1,19 +1,23 @@
 # vite_vitest_vue_vuetify
 
-[![npm version](https://img.shields.io/badge/vite-5.2.4-green)](https://www.npmjs.com/)
-[![npm version](https://img.shields.io/badge/vitest-1.4.0-green)](https://nodejs.jp/)
+[![npm version](https://img.shields.io/badge/vite-5.4.5-green)](https://www.npmjs.com/)
+[![npm version](https://img.shields.io/badge/vitest-2.1.1-green)](https://nodejs.jp/)
 
-[![npm version](https://img.shields.io/badge/typescript-5.4.3-green)](https://www.npmjs.com/package/typescript)
-[![npm version](https://img.shields.io/badge/vue-3.4.21-green)](https://www.npmjs.com/package/vue)
-[![npm version](https://img.shields.io/badge/vuetify-3.5.11-green)](https://www.npmjs.com/package/vuetify)
+[![npm version](https://img.shields.io/badge/typescript-5.6.2-green)](https://www.npmjs.com/package/typescript)
+[![npm version](https://img.shields.io/badge/vue-3.5.5-green)](https://www.npmjs.com/package/vue)
+[![npm version](https://img.shields.io/badge/vuetify-3.7.1-green)](https://www.npmjs.com/package/vuetify)
 
 ## VScode Extensions
 
+- [Code Spell Checker](https://marketplace.visualstudio.com/items?itemName=streetsidesoftware.code-spell-checker)
+- [ESLint](https://marketplace.visualstudio.com/items?itemName=dbaeumer.vscode-eslint)
+- [indent-rainbow](https://marketplace.visualstudio.com/items?itemName=oderwat.indent-rainbow)
+- [Playwright Test for VSCode](https://marketplace.visualstudio.com/items?itemName=ms-playwright.playwright)
+- [Prettier](https://marketplace.visualstudio.com/items?itemName=esbenp.prettier-vscode)
+- [Rainbow CSV](https://marketplace.visualstudio.com/items?itemName=mechatroner.rainbow-csv)
+- [Todo Tree](https://marketplace.visualstudio.com/items?itemName=Gruntfuggly.todo-tree)
 - [Vitest](https://marketplace.visualstudio.com/items?itemName=vitest.explorer)
 - [Vue](https://marketplace.visualstudio.com/items?itemName=Vue.volar)
-- [ESLint](https://marketplace.visualstudio.com/items?itemName=dbaeumer.vscode-eslint)
-- [Prettier](https://marketplace.visualstudio.com/items?itemName=esbenp.prettier-vscode)
-- [Code Spell Checker](https://marketplace.visualstudio.com/items?itemName=streetsidesoftware.code-spell-checker)
 
 ## Project Setup
 

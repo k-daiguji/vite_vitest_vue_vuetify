@@ -5,5 +5,7 @@ const detectBtn = ref("Detect");
 </script>
 
 <template>
-  <v-btn class="text-capitalize text-primary">{{ detectBtn }}</v-btn>
+  <v-btn class="text-capitalize text-primary">
+    {{ detectBtn }}
+  </v-btn>
 </template>

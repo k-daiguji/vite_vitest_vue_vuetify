@@ -13,10 +13,14 @@ createApp(App)
     createVuetify({
       components,
       directives,
-      icons: { defaultSet: "mdi" },
+      icons: {
+        defaultSet: "mdi",
+      },
       theme: {
         defaultTheme: "customTheme",
-        themes: { customTheme },
+        themes: {
+          customTheme,
+        },
       },
     }),
   )
