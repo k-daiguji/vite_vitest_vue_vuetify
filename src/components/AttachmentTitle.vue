@@ -14,6 +14,7 @@ defineProps<{ title: string; titleWidth: number }>();
   display: flex;
   padding: 7px 0px 7px 0px;
 }
+
 .title {
   align-content: center;
   min-width: v-bind(titleWidth + "px");

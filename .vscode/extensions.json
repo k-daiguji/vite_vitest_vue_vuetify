@@ -1,8 +1,13 @@
 {
   "recommendations": [
-    "Vue.volar",
-    "ms-playwright.playwright",
     "dbaeumer.vscode-eslint",
-    "esbenp.prettier-vscode"
+    "esbenp.prettier-vscode",
+    "gruntfuggly.todo-tree",
+    "mechatroner.rainbow-csv",
+    "ms-playwright.playwright",
+    "oderwat.indent-rainbow",
+    "streetsidesoftware.code-spell-checker",
+    "vitest.explorer",
+    "Vue.volar"
   ]
 }
