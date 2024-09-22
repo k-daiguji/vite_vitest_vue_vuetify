@@ -9,6 +9,7 @@
 
 ## VScode Extensions
 
+- [Biome](https://marketplace.visualstudio.com/items?itemName=biomejs.biome)
 - [Code Spell Checker](https://marketplace.visualstudio.com/items?itemName=streetsidesoftware.code-spell-checker)
 - [indent-rainbow](https://marketplace.visualstudio.com/items?itemName=oderwat.indent-rainbow)
 - [Playwright Test for VSCode](https://marketplace.visualstudio.com/items?itemName=ms-playwright.playwright)
