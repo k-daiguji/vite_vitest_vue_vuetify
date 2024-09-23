@@ -1,7 +1,7 @@
 import { describe, expect, it } from "vitest";
 import { defineComponent } from "vue";
 
-import { mountComponent } from "@/components/__tests__/testHelper";
+import { mountComponent } from "~/testHelper.ts";
 
 import AttachmentTitle from "@/components/AttachmentTitle.vue";
 
