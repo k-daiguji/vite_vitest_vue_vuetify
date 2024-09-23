@@ -2,8 +2,9 @@ import { describe, expect, it } from "vitest";
 import { defineComponent, shallowReactive } from "vue";
 import { VTabs } from "vuetify/components";
 
+import { mountComponent } from "~/testHelper.ts";
+
 import BaseTab from "@/components/BaseTab.vue";
-import { mountComponent } from "@/components/__tests__/testHelper";
 
 const component1 = defineComponent({
   props: {},
