@@ -6,22 +6,20 @@ import * as directives from "vuetify/directives";
 import "vuetify/styles";
 
 import App from "@/components/App.vue";
-import customTheme from "@/components/customTheme.json";
+import customTheme from "@/customTheme.json";
 
-createApp(App)
-  .use(
-    createVuetify({
-      components,
-      directives,
-      icons: {
-        defaultSet: "mdi",
-      },
-      theme: {
-        defaultTheme: "customTheme",
-        themes: {
-          customTheme,
-        },
-      },
-    }),
-  )
-  .mount("#app");
+const vuetify = createVuetify({
+  components,
+  directives,
+  icons: {
+    defaultSet: "mdi",
+  },
+  theme: {
+    defaultTheme: "customTheme",
+    themes: {
+      customTheme,
+    },
+  },
+});
+
+createApp(App).use(vuetify).mount("#app");

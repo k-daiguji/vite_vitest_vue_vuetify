@@ -2,7 +2,16 @@ import { configDefaults, defineConfig } from "vitest/config";
 import vue from "@vitejs/plugin-vue";
 
 export default defineConfig({
-  plugins: [vue()],
+  plugins: [
+    vue({
+      customElement: true,
+      template: {
+        compilerOptions: {
+          isCustomElement: tag => tag.includes("v-"),
+        },
+      },
+    }),
+  ],
   resolve: {
     alias: {
       "@": `${__dirname}/src`,

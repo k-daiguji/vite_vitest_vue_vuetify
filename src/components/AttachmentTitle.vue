@@ -12,7 +12,7 @@ defineProps<{ title: string; titleWidth: number }>();
 <style scoped>
 .row {
   display: flex;
-  padding: 7px 0px 7px 0px;
+  padding: 7px 0;
 }
 
 .title {

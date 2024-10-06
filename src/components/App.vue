@@ -2,17 +2,17 @@
 import { shallowRef } from "vue";
 
 import BaseTab from "@/components/BaseTab.vue";
-import DummyBtn from "@/components/DummyBtn.vue";
+import BaseSwitcher from "@/components/BaseSwitcher.vue";
 
-const dummyTabs = [
-  { name: "Sample1", component: DummyBtn },
-  { name: "Sample2", component: DummyBtn },
-  { name: "Sample3", component: DummyBtn },
+const _dummyTabs = [
+  { name: "Sample1", component: BaseSwitcher },
+  { name: "Sample2", component: BaseSwitcher },
+  { name: "Sample3", component: BaseSwitcher },
 ];
-const dummyTabs2 = shallowRef([
-  { name: "Sample4", component: DummyBtn },
-  { name: "Sample5", component: DummyBtn },
-  { name: "Sample6", component: DummyBtn },
+const _dummyTabs2 = shallowRef([
+  { name: "Sample4", component: BaseSwitcher },
+  { name: "Sample5", component: BaseSwitcher },
+  { name: "Sample6", component: BaseSwitcher },
 ]);
 </script>
 
@@ -20,12 +20,12 @@ const dummyTabs2 = shallowRef([
   <v-app>
     <v-container>
       <BaseTab
-        v-model="dummyTabs"
+        v-model="_dummyTabs"
         :is-fixed-length="true"
         :show-tab-body-animation="true"
       />
       <BaseTab
-        v-model="dummyTabs2"
+        v-model="_dummyTabs2"
         :is-fixed-length="false"
         show-tab-body-animation="none"
       />
