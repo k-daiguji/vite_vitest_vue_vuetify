@@ -6,6 +6,10 @@
     "composite": true,
     "module": "ESNext",
     "moduleResolution": "Bundler",
-    "noEmit": true
+    "noEmit": true,
+    "paths": {
+      "@/*": ["./src/*"],
+      "~/*": ["./tests/*"]
+    }
   }
 }

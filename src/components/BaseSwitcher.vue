@@ -1,10 +1,10 @@
 <script setup lang="ts">
-const switcher = defineModel<boolean>({ required: true });
+const _switcher = defineModel<boolean>({ required: true });
 </script>
 
 <template>
   <v-switch
-    v-model="switcher"
+    v-model="_switcher"
     color="primary"
     hide-details
   />

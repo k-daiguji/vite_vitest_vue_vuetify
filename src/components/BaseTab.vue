@@ -1,18 +1,24 @@
 <script setup lang="ts">
-import { ref, type Component } from "vue";
+import { ref } from "vue";
 
-const tabs = defineModel<{ name: string; component: Component }[]>({
+import type { Tab } from "@/types/components";
+
+const tabs = defineModel<Tab[]>({
   required: true,
 });
 defineProps<{
   isFixedLength: boolean;
   showTabBodyAnimation: true | "none";
 }>();
+defineEmits<{ modelValue: [tab: Tab] }>();
+
 const tabIndex = ref(0);
 
-const close = (e: MouseEvent, index: number) => {
+const _close = (e: MouseEvent, index: number) => {
   e.stopPropagation();
-  if (0 < tabIndex.value && index <= tabIndex.value) tabIndex.value--;
+  if (index <= tabIndex.value) {
+    tabIndex.value--;
+  }
   tabs.value = tabs.value.filter((_, i) => i !== index);
 };
 </script>
@@ -32,7 +38,7 @@ const close = (e: MouseEvent, index: number) => {
       <v-icon
         v-if="!isFixedLength"
         icon="mdi-close"
-        @click="close($event, i)"
+        @click="_close($event, i)"
       />
     </v-tab>
   </v-tabs>
@@ -40,14 +46,11 @@ const close = (e: MouseEvent, index: number) => {
     <v-window-item
       v-for="(tab, i) in tabs"
       :key="i"
-      :transition="showTabBodyAnimation"
       :reverse-transition="showTabBodyAnimation"
+      :transition="showTabBodyAnimation"
     >
       <div class="pt-5 pb-5">
-        <component
-          id="tab-body"
-          :is="tab.component"
-        />
+        <component :is="tab.component"/>
       </div>
     </v-window-item>
   </v-window>

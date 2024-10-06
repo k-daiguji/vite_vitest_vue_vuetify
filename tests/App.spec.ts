@@ -1,7 +1,7 @@
 import { describe, expect, it } from "vitest";
 import type { DefineComponent } from "vue";
 
-import { mountComponent } from "~/testHelper.ts";
+import { mountComponent } from "~/testHelper";
 
 import App from "@/components/App.vue";
 import BaseTab from "@/components/BaseTab.vue";
