@@ -1,9 +1,0 @@
-{
-  "colors": {
-    "error": "#FF0000",
-    "primary": "#0591B9",
-    "success": "#00FF00",
-    "warning": "#FFFF00"
-  },
-  "dark": false
-}
