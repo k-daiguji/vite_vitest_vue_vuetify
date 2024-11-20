@@ -9,6 +9,18 @@ import Settings from "@/app/views/AreaSettings.vue";
 </template>
 
 <style>
+.cursor-pointer {
+  cursor: pointer;
+}
+
+.mr-auto {
+  margin-right: auto;
+}
+
+.pa-2 {
+  padding: 8px;
+}
+
 .default-height {
   --height: 32px;
 }
