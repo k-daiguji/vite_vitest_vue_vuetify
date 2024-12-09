@@ -1,20 +1,18 @@
 <script setup lang="ts">
-import { ref } from "vue";
+import { Tabs } from "@/base";
 
-import { ICON, Icon, Switch } from "@/base";
+import Sub from "@/app/components/Sub.vue";
 
-const enabled = ref(true);
+const tabs = [
+  { name: "Aaa", component: Sub },
+  { name: "bBb", component: Sub },
+];
 </script>
 
 <template>
-  <Switch v-model="enabled" />
-  <Icon
-    :icon="ICON.CLOSE"
-    @clicked="console.log('clicked1')"
-  />
-  <Icon
-    :enabled
-    :icon="ICON.COPY"
-    @clicked="console.log('clicked2')"
+  <Tabs
+    v-model="tabs"
+    is-fixed-length
+    is-show-animation
   />
 </template>
