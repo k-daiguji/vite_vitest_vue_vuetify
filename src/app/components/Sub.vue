@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { ref } from "vue";
 
-import { ICON, Icon, List, Switch } from "@/base";
+import { ICON, Icon, List, Switch, Table } from "@/base";
 
 const enabled = ref(true);
 </script>
@@ -21,4 +21,5 @@ const enabled = ref(true);
     :enabled
     :labels="['List1', 'List2', 'List3']"
   />
+  <Table></Table>
 </template>
