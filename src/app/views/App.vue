@@ -19,7 +19,8 @@ import Settings from "@/app/views/AreaSettings.vue";
     color: #b0b0b0;
   }
 
-  &:enabled {
+  &:enabled,
+  &.enabled {
     background-color: aquamarine;
     color: #000;
 
