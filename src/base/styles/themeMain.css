@@ -1,0 +1,19 @@
+.hover {
+  background-color: #70d0d0;
+  color: white;
+}
+
+.active {
+  background-color: #4bbdcb;
+  color: white;
+}
+
+.header {
+  background-color: #0591b9;
+  color: white;
+}
+
+.disabled {
+  background-color: #a0a0a0;
+  color: white;
+}

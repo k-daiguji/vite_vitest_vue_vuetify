@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { ref } from "vue";
 
-import { ICON, Icon, Switch } from "@/base";
+import { ICON, Icon, List, Switch } from "@/base";
 
 const enabled = ref(true);
 </script>
@@ -16,5 +16,9 @@ const enabled = ref(true);
     :enabled
     :icon="ICON.COPY"
     @clicked="console.log('clicked2')"
+  />
+  <List
+    :enabled
+    :labels="['List1', 'List2', 'List3']"
   />
 </template>
