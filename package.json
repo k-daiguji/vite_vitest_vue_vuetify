@@ -18,20 +18,20 @@
   },
   "devDependencies": {
     "@biomejs/biome": "1.9.4",
-    "@playwright/test": "^1.49.0",
+    "@playwright/test": "^1.49.1",
     "@tsconfig/node20": "^20.1.2",
-    "@types/node": "^22.10.1",
+    "@types/node": "^22.10.2",
     "@vitejs/plugin-vue": "^5.2.1",
     "@vue/test-utils": "^2.4.6",
     "@vue/tsconfig": "^0.7.0",
-    "happy-dom": "^15.11.7",
-    "npm-run-all2": "^7.0.1",
+    "happy-dom": "^16.0.1",
+    "npm-run-all2": "^7.0.2",
     "typescript": "^5.7.2",
-    "vite": "^6.0.3",
-    "vite-plugin-vue-devtools": "^7.6.7",
+    "vite": "^6.0.6",
+    "vite-plugin-vue-devtools": "^7.6.8",
     "vite-plugin-vuetify": "^2.0.4",
     "vitest": "^2.1.8",
-    "vue-tsc": "^2.1.10",
-    "vuetify": "^3.7.5"
+    "vue-tsc": "^2.2.0",
+    "vuetify": "^3.7.6"
   }
 }
