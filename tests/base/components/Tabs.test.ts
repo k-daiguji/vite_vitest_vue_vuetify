@@ -1,10 +1,10 @@
 import { mount } from "@vue/test-utils";
 import { expect, test } from "vitest";
-import { defineComponent, shallowRef } from "vue";
+import { defineComponent, markRaw, shallowRef } from "vue";
 
 import { COLOR, type Tab, Tabs } from "@/base";
 
-const tabs: Tab[] = [
+const tabs: Tab[] = markRaw([
   {
     name: "Dummy1",
     component: defineComponent({ template: "<div>Dummy1 message</div>" }),
@@ -17,7 +17,7 @@ const tabs: Tab[] = [
     name: "Dummy3",
     component: defineComponent({ template: "<div>Dummy3 message</div>" }),
   },
-];
+]);
 
 test.each([
   ["Fixed", true],
