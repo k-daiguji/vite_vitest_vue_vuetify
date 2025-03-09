@@ -1,6 +1,6 @@
 import { mount } from "@vue/test-utils";
 import { expect, test } from "vitest";
-import { defineComponent, markRaw, shallowRef } from "vue";
+import { defineComponent, markRaw } from "vue";
 
 import { COLOR, type Tab, Tabs } from "@/base";
 
