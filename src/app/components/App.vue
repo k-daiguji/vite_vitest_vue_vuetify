@@ -1,18 +1,30 @@
 <script setup lang="ts">
-import { Tabs } from "@/base";
-
-import Sub from "@/app/components/Sub.vue";
-
-const tabs = [
-  { name: "Aaa", component: Sub },
-  { name: "bBb", component: Sub },
-];
+import HelpArea from "@/app/components/HelpArea.vue";
 </script>
 
 <template>
-  <Tabs
-    v-model="tabs"
-    is-fixed-length
-    is-show-animation
-  />
+  <HelpArea/>
 </template>
+
+<style>
+.primary-theme-color {
+  &:disabled {
+    background-color: lightgray;
+    color: gray;
+  }
+
+  &:enabled {
+    background-color: aquamarine;
+    color: #000;
+
+    &:hover {
+      background-color: aqua;
+    }
+
+    &:active {
+      background-color: aqua;
+      color: #fff;
+    }
+  }
+}
+</style>

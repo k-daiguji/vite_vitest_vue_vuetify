@@ -2,20 +2,10 @@ import { configDefaults, defineConfig } from "vitest/config";
 import vue from "@vitejs/plugin-vue";
 
 export default defineConfig({
-  plugins: [
-    vue({
-      customElement: true,
-      template: {
-        compilerOptions: {
-          isCustomElement: tag => tag.includes("v-"),
-        },
-      },
-    }),
-  ],
+  plugins: [vue()],
   resolve: {
     alias: {
       "@": `${__dirname}/src`,
-      "~": `${__dirname}/tests`,
     },
   },
   test: {
@@ -27,5 +17,6 @@ export default defineConfig({
         inline: ["vuetify"],
       },
     },
+    setupFiles: ["tests/setup"],
   },
 });
