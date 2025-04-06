@@ -4,11 +4,27 @@
     "allowImportingTsExtensions": true,
     "baseUrl": ".",
     "composite": true,
+    // "erasableSyntaxOnly": true,
+    "esModuleInterop": true,
+    "exactOptionalPropertyTypes": true,
     "module": "ESNext",
     "moduleResolution": "Bundler",
     "noEmit": true,
+    "noEmitHelpers": true,
+    "noFallthroughCasesInSwitch": true,
+    "noImplicitAny": true,
+    "noImplicitOverride": true,
+    "noImplicitThis": true,
+    "noUncheckedIndexedAccess": true,
+    // "noUncheckedSideEffectImports": true,
+    "noPropertyAccessFromIndexSignature": true,
+    "outDir": "dist",
     "paths": {
       "@/*": ["./src/*"]
-    }
+    },
+    "removeComments": true,
+    "strict": true,
+    "target": "ES6",
+    "verbatimModuleSyntax": true
   }
 }
