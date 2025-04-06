@@ -1,13 +1,8 @@
-import { configDefaults, defineConfig } from "vitest/config";
-import vue from "@vitejs/plugin-vue";
+import { configDefaults, mergeConfig } from "vitest/config";
 
-export default defineConfig({
-  plugins: [vue()],
-  resolve: {
-    alias: {
-      "@": `${__dirname}/src`,
-    },
-  },
+import viteConfig from "./vite.config";
+
+export default mergeConfig(viteConfig, {
   test: {
     environment: "happy-dom",
     exclude: [...configDefaults.exclude, "e2e/*"],
