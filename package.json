@@ -23,6 +23,7 @@
   },
   "devDependencies": {
     "@biomejs/biome": "1.9.4",
+    "@mdi/font": "^7.4.47",
     "@playwright/test": "^1.51.1",
     "@types/node": "^22.14.0",
     "@vitejs/plugin-vue": "^5.2.3",
