@@ -1,8 +1,11 @@
 <script setup lang="ts">
 import type { themeColor } from "@/app/constants/themeColor";
 
-const { enabled = true, variant = "flat" } = defineProps<{
-  text: string;
+const {
+  enabled = true,
+  rounded = "xs",
+  variant = "flat",
+} = defineProps<{
   themeColor: (typeof themeColor)[keyof typeof themeColor];
 
   enabled?: boolean;
@@ -16,11 +19,12 @@ defineEmits<{ click: [] }>();
   <v-btn
     :class="themeColor"
     :disabled="!enabled"
+    :height="32"
     :ripple="false"
     :rounded="rounded"
     :variant="variant"
     @click="$emit('click')"
   >
-    {{ text }}
+    <slot></slot>
   </v-btn>
 </template>
