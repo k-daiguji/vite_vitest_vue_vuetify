@@ -1,19 +1,33 @@
 <script setup lang="ts">
-import BaseButton from "@/app/components/BaseButton.vue";
+import Button from "@/app/components/BaseButton.vue";
+import Icon from "@/app/components/BaseIcon.vue";
 import { themeColor } from "@/app/constants/themeColor";
 </script>
 
 <template>
-  <BaseButton
-    text="Cancel"
+  <Icon icon="home"/>
+  <Icon :enabled="false" icon="home"/>
+  <Button
     :theme-color="themeColor.primary"
     rounded="xl"
-    @click="console.log('cancel')"
-  />
-  <BaseButton
-    text="OK"
+    @click="console.log('1')"
+  >
+    <Icon
+      embedded
+      icon="home"
+    />
+    Home
+  </Button>
+  <Button
+    :enabled="false"
     :theme-color="themeColor.primary"
     rounded="xl"
-    @click="console.log('ok')"
-  />
+    @click="console.log('2')"
+  >
+    Home
+    <Icon
+      embedded
+      icon="home"
+    />
+  </Button>
 </template>
