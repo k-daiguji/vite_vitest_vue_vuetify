@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import type { icon } from "@/app/constants/icon";
-import type { Theme } from "@/app/types/theme";
+import type { Theme } from "@/app/types/color";
 
 const { enabled = true } = defineProps<{
   icon: (typeof icon)[keyof typeof icon];
