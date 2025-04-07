@@ -7,7 +7,7 @@ import HelpArea from "@/app/components/HelpArea.vue";
 </template>
 
 <style>
-.primary-theme-color {
+.primary {
   &:disabled {
     background-color: lightgray;
     color: gray;

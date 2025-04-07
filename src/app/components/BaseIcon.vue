@@ -1,8 +1,9 @@
 <script setup lang="ts">
-import type { icon } from "@/app/constants/icon";
+import type { icon } from "@/app/constants";
+import type { Icon } from "@/app/types";
 
 const { enabled = true, embedded = false } = defineProps<{
-  icon: (typeof icon)[keyof typeof icon];
+  icon: Icon;
 
   enabled?: boolean;
   embedded?: boolean;
@@ -27,10 +28,8 @@ const { enabled = true, embedded = false } = defineProps<{
     color: gray;
   }
 
-  &.enabled {
-    &.embedded {
-      cursor: pointer;
-    }
+  &.enabled.embedded {
+    cursor: pointer;
   }
 }
 </style>

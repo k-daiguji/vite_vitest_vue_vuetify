@@ -1,14 +1,22 @@
 <script setup lang="ts">
-import type { themeColor } from "@/app/constants/themeColor";
+import BaseIcon from "@/app/components/BaseIcon.vue";
+import type { Icon, Theme } from "@/app/types";
 
 const {
+  appendIcon = "",
   enabled = true,
+  icon = "",
+  prependIcon = "",
   rounded = "xs",
   variant = "flat",
 } = defineProps<{
-  themeColor: (typeof themeColor)[keyof typeof themeColor];
+  text: string;
+  theme: Theme;
 
+  appendIcon?: Icon;
   enabled?: boolean;
+  icon?: Icon;
+  prependIcon?: Icon;
   rounded?: "xl";
   variant?: "text";
 }>();
@@ -17,7 +25,7 @@ defineEmits<{ click: [] }>();
 
 <template>
   <v-btn
-    :class="themeColor"
+    :class="theme"
     :disabled="!enabled"
     :height="32"
     :ripple="false"
@@ -25,6 +33,26 @@ defineEmits<{ click: [] }>();
     :variant="variant"
     @click="$emit('click')"
   >
-    <slot></slot>
+    <BaseIcon
+      v-if="prependIcon"
+      embedded
+      :icon="prependIcon"
+    />
+    <BaseIcon
+      v-if="icon"
+      embedded
+      :icon="icon"
+    />
+    <span
+      v-else
+      class="text-none"
+    >
+      {{ text }}
+    </span>
+    <BaseIcon
+      v-if="appendIcon"
+      embedded
+      :icon="appendIcon"
+    />
   </v-btn>
 </template>
