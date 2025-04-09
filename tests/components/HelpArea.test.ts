@@ -10,14 +10,14 @@ test("Mounted", ({ expect }) => {
 
   const buttons = wrapper.findAllComponents(BaseButton);
   expect(buttons.length).toBe(2);
-  const [cancel, ok] = buttons;
-  if (cancel && ok) {
-    expect(cancel.props("text")).toBe("Cancel");
-    expect(cancel.props("themeColor")).toBe(themeColor.primary);
-    expect(cancel.props("rounded")).toBe("xl");
-    expect(ok.props("text")).toBe("OK");
-    expect(ok.props("themeColor")).toBe(themeColor.primary);
-    expect(ok.props("rounded")).toBe("xl");
+  const [off, on] = buttons;
+  if (off && on) {
+    expect(off.props("text")).toBe("OFF");
+    expect(off.props("themeColor")).toBe(themeColor.primary);
+    expect(off.props("rounded")).toBe("xl");
+    expect(on.props("text")).toBe("ON");
+    expect(on.props("themeColor")).toBe(themeColor.primary);
+    expect(on.props("rounded")).toBe("xl");
   } else {
     expect.fail("Buttons not found");
   }

@@ -1,19 +1,25 @@
 <script setup lang="ts">
 import BaseButton from "@/app/components/BaseButton.vue";
 import { themeColor } from "@/app/constants/themeColor";
+import { ref } from "vue";
+
+const state = ref(false);
 </script>
 
 <template>
+  <p id="state">State: {{ state }}</p>
   <BaseButton
-    text="Cancel"
+    id="off-button"
+    text="OFF"
     :theme-color="themeColor.primary"
     rounded="xl"
-    @click="console.log('cancel')"
+    @click="state = false"
   />
   <BaseButton
-    text="OK"
+    id="on-button"
+    text="ON"
     :theme-color="themeColor.primary"
     rounded="xl"
-    @click="console.log('ok')"
+    @click="state = true"
   />
 </template>
