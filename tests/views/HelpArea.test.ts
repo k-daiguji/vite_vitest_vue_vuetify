@@ -2,8 +2,8 @@ import { shallowMount } from "@vue/test-utils";
 import { test } from "vitest";
 
 import BaseButton from "@/app/components/BaseButton.vue";
-import HelpArea from "@/app/components/HelpArea.vue";
 import { themeColor } from "@/app/constants/themeColor";
+import HelpArea from "@/app/views/HelpArea.vue";
 
 test("Mounted", ({ expect }) => {
   using wrapper = shallowMount(HelpArea);

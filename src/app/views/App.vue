@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import HelpArea from "@/app/components/HelpArea.vue";
+import HelpArea from "@/app/views/HelpArea.vue";
 </script>
 
 <template>
