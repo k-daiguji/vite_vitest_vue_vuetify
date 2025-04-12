@@ -11,7 +11,7 @@ const customTest = test.extend<{ wrapper: VueWrapper }>({
   wrapper: async ({}, use) => {
     using wrapper = shallowMount(BaseIcon, {
       props: {
-        icon: icon.lock,
+        icon: icon.settings,
         theme: theme.primary,
       },
     });
@@ -19,7 +19,7 @@ const customTest = test.extend<{ wrapper: VueWrapper }>({
   },
 });
 
-const baseClasses = ["icon", ...icon.lock.split(" "), theme.primary];
+const baseClasses = ["icon", ...icon.settings.split(" "), theme.primary];
 
 customTest("Mounted", ({ expect, wrapper }) => {
   expect(wrapper.find("span").classes()).toStrictEqual([
