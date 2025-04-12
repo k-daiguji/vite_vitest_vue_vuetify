@@ -1,7 +1,7 @@
 import { test, _electron as electron, expect } from "@playwright/test";
 
 test("visits the app root url", async () => {
-  const app = await electron.launch({ args: ["./src/main/index.js"] });
+  const app = await electron.launch({ args: ["./dist/main.js"] });
   const page = await app.firstWindow();
 
   expect(await page.title()).toBe("My App");
