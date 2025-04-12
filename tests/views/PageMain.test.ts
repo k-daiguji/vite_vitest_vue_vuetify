@@ -1,11 +1,11 @@
 import { shallowMount } from "@vue/test-utils";
 import { test } from "vitest";
 
+import HelpArea from "@/app/views/HelpArea.vue";
 import PageMain from "@/app/views/PageMain.vue";
-import Settings from "@/app/views/AreaSettings.vue";
 
 test("Mounted", ({ expect }) => {
   using wrapper = shallowMount(PageMain);
 
-  expect(wrapper.findComponent(Settings).props()).toStrictEqual({});
+  expect(wrapper.findComponent(HelpArea).props()).toStrictEqual({});
 });

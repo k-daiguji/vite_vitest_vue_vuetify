@@ -5,7 +5,6 @@ import { createVuetify } from "vuetify";
 import { VBtn } from "vuetify/components";
 
 import BaseButton from "@/app/components/BaseButton.vue";
-import { theme } from "@/app/constants/color";
 
 const vuetify = createVuetify({ components: { VBtn } });
 
@@ -15,7 +14,7 @@ const customTest = test.extend<{ wrapper: VueWrapper }>({
     using wrapper = mount(BaseButton, {
       props: {
         text: "dummyText",
-        theme: theme.primary,
+        theme: "dummyTheme",
       },
       global: {
         plugins: [vuetify],
@@ -27,7 +26,7 @@ const customTest = test.extend<{ wrapper: VueWrapper }>({
 
 customTest("Mounted", ({ expect, wrapper }) => {
   const button = wrapper.findComponent(VBtn);
-  expect(button.classes()).toContain(theme.primary);
+  expect(button.classes()).toContain("dummyTheme");
   expect(button.props("disabled")).toBe(false);
   expect(button.props("ripple")).toBe(false);
   expect(button.props("rounded")).toBe("0");

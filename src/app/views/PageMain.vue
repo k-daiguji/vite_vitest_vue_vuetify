@@ -1,7 +1,7 @@
 <script setup lang="ts">
-import Settings from "@/app/views/AreaSettings.vue";
+import HelpArea from "@/app/views/HelpArea.vue";
 </script>
 
 <template>
-  <Settings/>
+  <HelpArea/>
 </template>
