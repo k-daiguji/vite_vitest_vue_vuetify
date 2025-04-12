@@ -3,10 +3,10 @@
 </template>
 
 <style>
-.primary-theme-color {
+.primary {
   &:disabled {
     background-color: lightgray;
-    color: gray;
+    color: #b0b0b0;
   }
 
   &:enabled {
