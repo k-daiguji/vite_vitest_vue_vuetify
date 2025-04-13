@@ -27,11 +27,14 @@ const customTest = test.extend<{ wrapper: VueWrapper }>({
 
 customTest("Mounted", ({ expect, wrapper }) => {
   const button = wrapper.findComponent(VBtn);
-  expect(button.classes()).toContain(theme.primary);
-  expect(button.props("disabled")).toBe(false);
-  expect(button.props("ripple")).toBe(false);
-  expect(button.props("rounded")).toBe("0");
-  expect(button.props("variant")).toBe("flat");
+  const classes = button.classes();
+  expect(classes).toContain("text-none");
+  expect(classes).toContain(theme.primary);
+  const props = button.props();
+  expect(props.disabled).toBe(false);
+  expect(props.ripple).toBe(false);
+  expect(props.rounded).toBe("0");
+  expect(props.variant).toBe("flat");
   expect(button.text()).toBe("dummyText");
 });
 
