@@ -3,6 +3,10 @@
 </template>
 
 <style>
+.bg-default {
+  background-color: #eee;
+}
+
 .primary {
   &:disabled {
     background-color: lightgray;
