@@ -3,10 +3,10 @@ import { test } from "vitest";
 
 import BaseButton from "@/app/components/BaseButton.vue";
 import { theme } from "@/app/constants/color";
-import Settings from "@/app/views/AreaSettings.vue";
+import Intra from "@/app/views/AreaIntra.vue";
 
 test("Mounted", ({ expect }) => {
-  using wrapper = shallowMount(Settings);
+  using wrapper = shallowMount(Intra);
 
   const [off, on] = wrapper.findAllComponents(BaseButton);
   if (!(off && on)) {

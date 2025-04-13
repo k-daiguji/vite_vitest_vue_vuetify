@@ -1,7 +1,7 @@
 <script setup lang="ts">
-import Settings from "@/app/views/AreaSettings.vue";
+import Intra from "@/app/views/AreaIntra.vue";
 </script>
 
 <template>
-  <Settings/>
+  <Intra/>
 </template>
