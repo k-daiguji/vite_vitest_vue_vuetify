@@ -18,6 +18,7 @@ defineEmits<{ click: [] }>();
 
 <template>
   <v-btn
+    class="text-none"
     :class="theme"
     :disabled="!enabled"
     :ripple="false"
