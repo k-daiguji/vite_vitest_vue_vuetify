@@ -20,7 +20,8 @@
     "noPropertyAccessFromIndexSignature": true,
     "outDir": "dist",
     "paths": {
-      "@/*": ["./src/*"]
+      "@/*": ["./src/*"],
+      "#/*": ["./tests/*"]
     },
     "removeComments": true,
     "strict": true,
