@@ -14,12 +14,13 @@ const { enabled = true } = defineProps<{
     <table class="table text-center w-100">
       <thead>
         <tr
-          class="enabled header"
+          class="enabled header-row"
           :class="theme"
         >
           <th
             v-for="(header, i) in data.headers"
             :key="i"
+            class="header"
           >
             {{ header }}
           </th>
@@ -29,11 +30,11 @@ const { enabled = true } = defineProps<{
         <tr
           v-for="(row, i) in data.rows"
           :key="i"
-          class="row"
         >
           <td
             v-for="(cell, j) in row"
             :key="j"
+            class="cell"
           >
             {{ cell }}
           </td>
@@ -45,19 +46,18 @@ const { enabled = true } = defineProps<{
 
 <style scoped>
 .container {
-  border: solid 1px #778ca3;
   cursor: default;
-  height: 109px;
+  height: 108px;
   overflow-y: auto;
   scrollbar-gutter: stable;
 }
 
 .table {
-  border-collapse: collapse;
+  border-collapse: separate;
   border-spacing: 0;
 }
 
-.header {
+.header-row {
   height: 36px;
   position: sticky;
   top: 0;
@@ -69,11 +69,13 @@ const { enabled = true } = defineProps<{
   }
 }
 
-.row {
+.header {
+  border-bottom: solid 1px #000;
   height: 36px;
+}
 
-  &:not(:last-child) {
-    border-bottom: solid 1px #778ca3;
-  }
+.cell {
+  border-bottom: solid 1px #b0b0b0;
+  height: 36px;
 }
 </style>
