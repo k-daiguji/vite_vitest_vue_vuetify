@@ -1,22 +1,22 @@
 <script setup lang="ts">
 import type { Theme } from "@/app/types/color";
 
-const { enabled = true } = defineProps<{
+const { height = "auto" } = defineProps<{
   data: { headers: string[]; rows: string[][] };
   theme: Theme;
 
-  enabled?: boolean;
+  height: string;
 }>();
 </script>
 
 <template>
   <div class="container">
-    <table class="table text-center w-100">
+    <table
+      class="table text-center w-100"
+      :class="`${theme}-table`"
+    >
       <thead>
-        <tr
-          class="enabled header-row"
-          :class="theme"
-        >
+        <tr class="enabled header-row">
           <th
             v-for="(header, i) in data.headers"
             :key="i"
@@ -47,7 +47,7 @@ const { enabled = true } = defineProps<{
 <style scoped>
 .container {
   cursor: default;
-  height: 108px;
+  height: v-bind(height);
   overflow-y: auto;
   scrollbar-gutter: stable;
 }

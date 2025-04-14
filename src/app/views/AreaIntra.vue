@@ -13,7 +13,9 @@ const data = {
     ["test1", 1, 2, 3],
     ["test2", 4, 5, 6],
     ["test3", 7, 8, 9],
-    ["test4", 7, 8, 9],
+    ["test4", 9, 8, 7],
+    ["test5", 6, 5, 4],
+    ["test6", 3, 2, 1],
   ],
 };
 </script>
@@ -38,6 +40,7 @@ const data = {
   </div>
   <BaseTable
     :data="data"
+    height="180px"
     :theme="theme.primary"
   />
 </template>

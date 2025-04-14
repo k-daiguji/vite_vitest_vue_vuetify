@@ -35,4 +35,13 @@ import Settings from "@/app/views/AreaSettings.vue";
     }
   }
 }
+
+.primary-table {
+  thead > tr {
+    background-color: deepskyblue;
+  }
+  tbody > tr:nth-child(even) {
+    background-color: skyblue;
+  }
+}
 </style>
