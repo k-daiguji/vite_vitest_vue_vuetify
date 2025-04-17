@@ -1,5 +1,11 @@
+<script setup lang="ts">
+import Intra from "@/app/views/AreaIntra.vue";
+import Settings from "@/app/views/AreaSettings.vue";
+</script>
+
 <template>
-  <router-view/>
+  <Intra/>
+  <Settings class="pt-2"/>
 </template>
 
 <style>
@@ -21,7 +27,8 @@
       background-color: aqua;
     }
 
-    &:active {
+    &:active,
+    &.activated {
       background-color: aqua;
       color: #fff;
     }
