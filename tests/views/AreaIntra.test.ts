@@ -12,10 +12,6 @@ test("Mounted", ({ expect }) => {
   if (!(off && on)) {
     throw new Error("Button not found");
   }
-  expect(off.props("text")).toBe("OFF");
-  expect(off.props("theme")).toBe(theme.primary);
-  expect(off.props("rounded")).toBe("xl");
-  expect(on.props("text")).toBe("ON");
-  expect(on.props("theme")).toBe(theme.primary);
-  expect(on.props("rounded")).toBe("xl");
+  expect(off.classes()).toStrictEqual([theme.primary]);
+  expect(on.classes()).toStrictEqual([theme.primary]);
 });

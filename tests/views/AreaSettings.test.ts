@@ -17,17 +17,15 @@ test("Mounted", ({ expect }) => {
     },
   });
 
-  const languageProps = wrapper.findComponent(BaseButton).props();
-  expect(languageProps.text).toBe("Language");
-  expect(languageProps.theme).toBe(theme.primary);
+  const language = wrapper.findComponent(BaseButton);
+  expect(language.classes()).toStrictEqual([theme.primary]);
+  expect(language.props("rounded")).toBe("0");
   const dialog = wrapper.findComponent(dialogStub);
   expect(dialog.classes()).toStrictEqual([]);
   const dialogProps = dialog.props();
   expect(dialogProps.modelValue).toBe(false);
-  expect(dialogProps.theme).toBe(theme.primary);
   expect(dialogProps.width).toBe(dialogSize.middle);
-  const closeProps = dialog.findComponent(BaseButton).props();
-  expect(closeProps.rounded).toBe("xl");
-  expect(closeProps.text).toBe("Close");
-  expect(closeProps.theme).toBe(theme.primary);
+  expect(dialog.findComponent(BaseButton).classes()).toStrictEqual([
+    theme.primary,
+  ]);
 });

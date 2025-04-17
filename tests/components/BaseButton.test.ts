@@ -13,10 +13,8 @@ const customTest = test.extend<{ wrapper: VueWrapper }>({
   // biome-ignore lint/correctness/noEmptyPattern: <explanation>
   wrapper: async ({}, use) => {
     using wrapper = mount(BaseButton, {
-      props: {
-        text: "dummyText",
-        theme: theme.primary,
-      },
+      props: {},
+      slots: { default: "dummyText" },
       global: {
         plugins: [vuetify],
       },
@@ -29,11 +27,10 @@ customTest("Mounted", ({ expect, wrapper }) => {
   const button = wrapper.findComponent(VBtn);
   const classes = button.classes();
   expect(classes).toContain("text-none");
-  expect(classes).toContain(theme.primary);
   const props = button.props();
   expect(props.disabled).toBe(false);
   expect(props.ripple).toBe(false);
-  expect(props.rounded).toBe("0");
+  expect(props.rounded).toBe("xl");
   expect(props.variant).toBe("flat");
   expect(button.text()).toBe("dummyText");
 });
@@ -50,9 +47,9 @@ customTest("setProps(enabled)", async ({ expect, wrapper }) => {
 });
 
 customTest("setProps(rounded)", async ({ expect, wrapper }) => {
-  await wrapper.setProps({ rounded: "xl" });
+  await wrapper.setProps({ rounded: "0" });
 
-  expect(wrapper.findComponent(VBtn).props("rounded")).toBe("xl");
+  expect(wrapper.findComponent(VBtn).props("rounded")).toBe("0");
 });
 
 customTest("setProps(variant)", async ({ expect, wrapper }) => {

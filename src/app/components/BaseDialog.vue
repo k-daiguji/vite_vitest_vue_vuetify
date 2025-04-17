@@ -1,11 +1,8 @@
 <script setup lang="ts">
 import type { dialogSize } from "@/app/constants/dialog";
-import type { Theme } from "@/app/types/color";
 
 const isVisible = defineModel<boolean>({ required: true });
 const { closableOutside = false, width = "auto" } = defineProps<{
-  theme: Theme;
-
   closableOutside?: boolean;
   width?: (typeof dialogSize)[keyof typeof dialogSize];
 }>();
