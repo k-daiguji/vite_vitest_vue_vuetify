@@ -12,17 +12,17 @@ const state = ref(false);
     <p id="state">State: {{ state }}</p>
     <BaseButton
       id="off-button"
-      text="OFF"
-      :theme="theme.primary"
-      rounded="xl"
+      :class="theme.primary"
       @click="state = false"
-    />
+    >
+      OFF
+    </BaseButton>
     <BaseButton
       id="on-button"
-      text="ON"
-      :theme="theme.primary"
-      rounded="xl"
+      :class="theme.primary"
       @click="state = true"
-    />
+    >
+      ON
+    </BaseButton>
   </div>
 </template>

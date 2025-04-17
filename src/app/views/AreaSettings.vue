@@ -12,22 +12,23 @@ const isVisible = ref(false);
 <template>
   <div>
     <BaseButton
-      text="Language"
-      :theme="theme.primary"
+      :class="theme.primary"
+      rounded="0"
       @click="isVisible = true"
-    />
+    >
+      Language
+    </BaseButton>
     <BaseDialog
       v-model="isVisible"
-      :theme="theme.primary"
       :width="dialogSize.middle"
     >
       <div class="text-right">
         <BaseButton
-          rounded="xl"
-          text="Close"
-          :theme="theme.primary"
+          :class="theme.primary"
           @click="isVisible = false"
-        />
+        >
+          Close
+        </BaseButton>
       </div>
     </BaseDialog>
   </div>
