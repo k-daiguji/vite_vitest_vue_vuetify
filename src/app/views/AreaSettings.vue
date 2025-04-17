@@ -3,20 +3,32 @@ import { ref } from "vue";
 
 import BaseButton from "@/app/components/BaseButton.vue";
 import BaseDialog from "@/app/components/BaseDialog.vue";
+import BaseIcon from "@/app/components/BaseIcon.vue";
 import { theme } from "@/app/constants/color";
 import { dialogSize } from "@/app/constants/dialog";
+import { icon } from "@/app/constants/icon";
 
 const isVisible = ref(false);
+
+let sub: Window | null = null;
+const open = () => {
+  sub = window.open("", "_blank", "width=400, height=600");
+};
+const close = () => {
+  sub?.close();
+};
 </script>
 
 <template>
   <div>
     <BaseButton
-      :class="theme.primary"
-      rounded="0"
+      :theme="theme.primary"
       @click="isVisible = true"
     >
-      Language
+      <BaseIcon
+        :icon="icon.lock"
+        :theme="theme.primary"
+      />
     </BaseButton>
     <BaseDialog
       v-model="isVisible"
@@ -24,7 +36,7 @@ const isVisible = ref(false);
     >
       <div class="text-right">
         <BaseButton
-          :class="theme.primary"
+          :theme="theme.primary"
           @click="isVisible = false"
         >
           Close
