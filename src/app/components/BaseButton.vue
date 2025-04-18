@@ -1,25 +1,38 @@
 <script setup lang="ts">
-const {
-  enabled = true,
-  rounded = "xl",
-  variant = "flat",
-} = defineProps<{
+import { computed } from "vue";
+
+const { enabled = true, rounded } = defineProps<{
   enabled?: boolean;
   rounded?: "0";
-  variant?: "text";
 }>();
 defineEmits<{ click: [] }>();
+
+const borderRadius = computed(() => {
+  if (rounded === "0") {
+    return "";
+  }
+  return "rounded-full";
+});
 </script>
 
 <template>
-  <v-btn
-    class="text-none"
+  <button
+    class="button"
+    :class="borderRadius"
     :disabled="!enabled"
-    :ripple="false"
-    :rounded="rounded"
-    :variant="variant"
     @click="$emit('click')"
   >
     <slot></slot>
-  </v-btn>
+  </button>
 </template>
+
+<style>
+.button {
+  height: 32px;
+  padding: 0 16px;
+}
+
+.rounded-full {
+  border-radius: calc(32px / 2);
+}
+</style>
