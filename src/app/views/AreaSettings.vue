@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { ref } from "vue";
 
-import BaseButton from "@/app/components/BaseButton.vue";
+import Button from "@/app/components/BaseButton.vue";
 import BaseDialog from "@/app/components/BaseDialog.vue";
 import { theme } from "@/app/constants/color";
 import { dialogSize } from "@/app/constants/dialog";
@@ -11,24 +11,24 @@ const isVisible = ref(false);
 
 <template>
   <div>
-    <BaseButton
+    <Button
       :class="theme.primary"
       rounded="0"
       @click="isVisible = true"
     >
       Language
-    </BaseButton>
+    </Button>
     <BaseDialog
       v-model="isVisible"
       :width="dialogSize.middle"
     >
       <div class="text-right">
-        <BaseButton
+        <Button
           :class="theme.primary"
           @click="isVisible = false"
         >
           Close
-        </BaseButton>
+        </Button>
       </div>
     </BaseDialog>
   </div>

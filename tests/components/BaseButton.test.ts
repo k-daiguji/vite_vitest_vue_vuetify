@@ -1,12 +1,12 @@
-import { shallowMount } from "@vue/test-utils";
+import { mount } from "@vue/test-utils";
 import { describe, test } from "vitest";
 
-import BaseButton from "@/app/components/BaseButton.vue";
+import Button from "@/app/components/BaseButton.vue";
 
 const slots = { default: "dummyText" };
 
 test("Mounted", ({ expect }) => {
-  using wrapper = shallowMount(BaseButton, { slots });
+  using wrapper = mount(Button, { slots });
 
   const testee = wrapper.find("button");
   expect(testee.attributes("disabled")).toBeUndefined();
@@ -16,7 +16,7 @@ test("Mounted", ({ expect }) => {
 
 describe("Changed props", () => {
   test("enabled", async ({ expect }) => {
-    using wrapper = shallowMount(BaseButton, { slots });
+    using wrapper = mount(Button, { slots });
 
     await wrapper.setProps({ enabled: false });
 
@@ -29,7 +29,7 @@ describe("Changed props", () => {
   });
 
   test("rounded", async ({ expect }) => {
-    using wrapper = shallowMount(BaseButton, { slots });
+    using wrapper = mount(Button, { slots });
 
     await wrapper.setProps({ rounded: "0" });
 
@@ -45,7 +45,7 @@ describe("Changed props", () => {
 test("When the button is pressed, an event is triggered.", async ({
   expect,
 }) => {
-  using wrapper = shallowMount(BaseButton, { slots });
+  using wrapper = mount(Button, { slots });
 
   await wrapper.find("button").trigger("click");
 
