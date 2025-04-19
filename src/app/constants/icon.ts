@@ -1,4 +1,3 @@
 export const icon = {
-  lock: "mdi mdi-lock",
-  unlock: "mdi mdi-lock-open",
+  settings: "mdi mdi-cog-outline",
 } as const;

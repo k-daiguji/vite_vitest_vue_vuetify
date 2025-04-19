@@ -1,10 +1,8 @@
 <script setup lang="ts">
 import type { icon } from "@/app/constants/icon";
-import type { Theme } from "@/app/types/color";
 
 const { enabled = true } = defineProps<{
   icon: (typeof icon)[keyof typeof icon];
-  theme: Theme;
 
   enabled?: boolean;
 }>();
@@ -12,8 +10,8 @@ const { enabled = true } = defineProps<{
 
 <template>
   <span
-    class="icon"
-    :class="icon, theme, { enabled }"
+    class="default-height icon"
+    :class="{ [icon]: true, enabled }"
   ></span>
 </template>
 
@@ -21,8 +19,8 @@ const { enabled = true } = defineProps<{
 .icon {
   align-items: center;
   display: flex;
-  font-size: 32px;
-  height: 32px;
-  width: 32px;
+  font-size: var(--height);
+  height: var(--height);
+  width: var(--height);
 }
 </style>

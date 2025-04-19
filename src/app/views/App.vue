@@ -9,12 +9,17 @@ import Settings from "@/app/views/AreaSettings.vue";
 </template>
 
 <style>
+.default-height {
+  --height: 32px;
+}
+
 .bg-default {
   background-color: #eee;
 }
 
 .primary {
-  &:disabled {
+  &:disabled,
+  &:not(.enabled) {
     background-color: lightgray;
     color: #b0b0b0;
   }
