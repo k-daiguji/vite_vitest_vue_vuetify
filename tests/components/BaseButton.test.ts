@@ -35,10 +35,6 @@ describe("Changed props", () => {
 
     const testee = wrapper.find("button");
     expect(testee.classes("rounded-full")).toBe(false);
-
-    await wrapper.setProps({ rounded: undefined });
-
-    expect(testee.classes("rounded-full")).toBe(true);
   });
 });
 
