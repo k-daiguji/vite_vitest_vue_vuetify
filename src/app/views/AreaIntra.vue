@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { ref } from "vue";
 
-import BaseButton from "@/app/components/BaseButton.vue";
+import Button from "@/app/components/BaseButton.vue";
 import { theme } from "@/app/constants/color";
 
 const state = ref(false);
@@ -10,19 +10,19 @@ const state = ref(false);
 <template>
   <div>
     <p id="state">State: {{ state }}</p>
-    <BaseButton
+    <Button
       id="off-button"
       :class="theme.primary"
       @click="state = false"
     >
       OFF
-    </BaseButton>
-    <BaseButton
+    </Button>
+    <Button
       id="on-button"
       :class="theme.primary"
       @click="state = true"
     >
       ON
-    </BaseButton>
+    </Button>
   </div>
 </template>
