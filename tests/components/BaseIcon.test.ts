@@ -1,27 +1,16 @@
-import type { VueWrapper } from "@vue/test-utils";
-import { shallowMount } from "@vue/test-utils";
-import { test } from "vitest";
+import { mount } from "@vue/test-utils";
+import { describe, test } from "vitest";
 
-import BaseIcon from "@/app/components/BaseIcon.vue";
+import Icon from "@/app/components/BaseIcon.vue";
 import { theme } from "@/app/constants/color";
 import { icon } from "@/app/constants/icon";
 
-const customTest = test.extend<{ wrapper: VueWrapper }>({
-  // biome-ignore lint/correctness/noEmptyPattern: <explanation>
-  wrapper: async ({}, use) => {
-    using wrapper = shallowMount(BaseIcon, {
-      props: {
-        icon: icon.lock,
-        theme: theme.primary,
-      },
-    });
-    await use(wrapper);
-  },
-});
+const props = { icon: icon.settings, theme: theme.primary };
+const baseClasses = ["default-height", "icon", ...icon.settings.split(" ")];
 
-const baseClasses = ["icon", ...icon.lock.split(" "), theme.primary];
+test("Mounted", ({ expect }) => {
+  using wrapper = mount(Icon, { props });
 
-customTest("Mounted", ({ expect, wrapper }) => {
   expect(wrapper.find("span").classes()).toStrictEqual([
     ...baseClasses,
     "enabled",
@@ -29,15 +18,19 @@ customTest("Mounted", ({ expect, wrapper }) => {
   expect(wrapper.text()).toBe("");
 });
 
-customTest("setProps(enabled)", async ({ expect, wrapper }) => {
-  await wrapper.setProps({ enabled: false });
+describe("Changed props", () => {
+  test("enabled", async ({ expect }) => {
+    using wrapper = mount(Icon, { props });
 
-  expect(wrapper.find("span").classes()).toStrictEqual(baseClasses);
+    await wrapper.setProps({ enabled: false });
 
-  await wrapper.setProps({ enabled: true });
+    expect(wrapper.find("span").classes()).toStrictEqual(baseClasses);
 
-  expect(wrapper.find("span").classes()).toStrictEqual([
-    ...baseClasses,
-    "enabled",
-  ]);
+    await wrapper.setProps({ enabled: true });
+
+    expect(wrapper.find("span").classes()).toStrictEqual([
+      ...baseClasses,
+      "enabled",
+    ]);
+  });
 });

@@ -3,8 +3,10 @@ import { ref } from "vue";
 
 import Button from "@/app/components/BaseButton.vue";
 import BaseDialog from "@/app/components/BaseDialog.vue";
+import Icon from "@/app/components/BaseIcon.vue";
 import { theme } from "@/app/constants/color";
 import { dialogSize } from "@/app/constants/dialog";
+import { icon } from "@/app/constants/icon";
 
 const isVisible = ref(false);
 </script>
@@ -16,7 +18,10 @@ const isVisible = ref(false);
       rounded="0"
       @click="isVisible = true"
     >
-      Language
+      <Icon
+        :class="theme.primary"
+        :icon="icon.settings"
+      />
     </Button>
     <BaseDialog
       v-model="isVisible"
