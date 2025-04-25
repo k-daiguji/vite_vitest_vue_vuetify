@@ -6,7 +6,7 @@
   "main": "./dist/main.js",
   "volta": {
     "node": "23.11.0",
-    "npm": "11.2.0"
+    "npm": "11.3.0"
   },
   "scripts": {
     "build": "npm run type-check && vite build && cp ./src/main/main.ts ./dist/main.js && cp -r ./src/@assets ./dist/",
@@ -23,18 +23,18 @@
   "devDependencies": {
     "@biomejs/biome": "1.9.4",
     "@mdi/font": "^7.4.47",
-    "@playwright/test": "^1.51.1",
-    "@types/node": "^22.14.1",
+    "@playwright/test": "^1.52.0",
+    "@types/node": "^22.15.2",
     "@vitejs/plugin-vue": "^5.2.3",
     "@vue/test-utils": "^2.4.6",
     "@vue/tsconfig": "^0.7.0",
-    "electron": "^35.1.5",
+    "electron": "^35.2.1",
     "happy-dom": "^17.4.4",
     "npm-run-all2": "^7.0.2",
     "typescript": "^5.8.3",
-    "vite": "^6.3.1",
-    "vitest": "^3.1.1",
-    "vue-tsc": "^2.2.8",
+    "vite": "^6.3.3",
+    "vitest": "^3.1.2",
+    "vue-tsc": "^2.2.10",
     "vuetify": "^3.8.2"
   }
 }
