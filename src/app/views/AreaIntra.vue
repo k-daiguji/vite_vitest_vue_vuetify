@@ -2,9 +2,22 @@
 import { ref } from "vue";
 
 import Button from "@/app/components/BaseButton.vue";
+import Table from "@/app/components/BaseTable.vue";
 import { theme } from "@/app/constants/color";
 
 const state = ref(false);
+
+const data = {
+  headers: ["Header 1", "Header 2", "Header 3", "Header 4"],
+  rows: [
+    ["test1", 1, 2, 3],
+    ["test2", 4, 5, 6],
+    ["test3", 7, 8, 9],
+    ["test4", 9, 8, 7],
+    ["test5", 6, 5, 4],
+    ["test6", 3, 2, 1],
+  ],
+};
 </script>
 
 <template>
@@ -25,4 +38,9 @@ const state = ref(false);
       ON
     </Button>
   </div>
+  <Table
+    :data="data"
+    height="180px"
+    :theme="theme.primary"
+  />
 </template>
