@@ -4,17 +4,19 @@ import Settings from "@/app/views/AreaSettings.vue";
 </script>
 
 <template>
-  <Intra/>
-  <Settings class="pt-2"/>
+  <div class="root">
+    <Intra/>
+    <Settings class="pt-2"/>
+  </div>
 </template>
 
 <style>
-.default-height {
+.root {
+  --bg-color: #f0f0f0;
   --height: 32px;
-}
 
-.bg-default {
-  background-color: #eee;
+  background-color: #f0f0f0;
+  height: 100vh;
 }
 
 .primary {
