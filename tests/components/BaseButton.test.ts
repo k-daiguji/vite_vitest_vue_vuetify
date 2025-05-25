@@ -3,24 +3,25 @@ import { describe, test } from "vitest";
 
 import Button from "@/app/components/BaseButton.vue";
 
-const slots = { default: "dummyText" };
-
 test("Mounted", ({ expect }) => {
-  using wrapper = mount(Button, { slots });
+  const text = "dummyText";
+
+  using wrapper = mount(Button, { props: { text } });
 
   const testee = wrapper.find("button");
   expect(testee.attributes("disabled")).toBeUndefined();
   expect(testee.classes()).toStrictEqual(["button", "rounded-full"]);
-  expect(testee.text()).toBe(slots.default);
+  expect(testee.text()).toBe(text);
 });
 
 describe("Changed props", () => {
   test("enabled", async ({ expect }) => {
-    using wrapper = mount(Button, { slots });
+    const text = "dummyText";
+    using wrapper = mount(Button, { props: { text } });
+    const testee = wrapper.find("button");
 
     await wrapper.setProps({ enabled: false });
 
-    const testee = wrapper.find("button");
     expect(testee.attributes("disabled")).toBeDefined();
 
     await wrapper.setProps({ enabled: true });
@@ -29,19 +30,23 @@ describe("Changed props", () => {
   });
 
   test("rounded", async ({ expect }) => {
-    using wrapper = mount(Button, { slots });
+    using wrapper = mount(Button, { props: { text: "dummyText" } });
+    const testee = wrapper.find("button");
 
     await wrapper.setProps({ rounded: "0" });
 
-    const testee = wrapper.find("button");
     expect(testee.classes("rounded-full")).toBe(false);
+
+    await wrapper.setProps({ rounded: undefined });
+
+    expect(testee.classes("rounded-full")).toBe(true);
   });
 });
 
 test("When the button is pressed, an event is triggered.", async ({
   expect,
 }) => {
-  using wrapper = mount(Button, { slots });
+  using wrapper = mount(Button, { props: { text: "dummyText" } });
 
   await wrapper.find("button").trigger("click");
 

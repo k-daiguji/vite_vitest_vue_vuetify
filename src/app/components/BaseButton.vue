@@ -1,18 +1,19 @@
 <script setup lang="ts">
 import { computed } from "vue";
 
+import BaseIcon from "@/app/components/BaseIcon.vue";
+import type { icon } from "@/app/constants/icon";
+
 const { enabled = true, rounded } = defineProps<{
   enabled?: boolean;
+  leftIcon?: (typeof icon)[keyof typeof icon];
+  rightIcon?: (typeof icon)[keyof typeof icon];
   rounded?: "0";
+  text?: string;
 }>();
 defineEmits<{ click: [] }>();
 
-const borderRadius = computed(() => {
-  if (rounded === "0") {
-    return "";
-  }
-  return "rounded-full";
-});
+const borderRadius = computed(() => (rounded === "0" ? "" : "rounded-full"));
 </script>
 
 <template>
@@ -22,17 +23,25 @@ const borderRadius = computed(() => {
     :disabled="!enabled"
     @click="$emit('click')"
   >
-    <slot></slot>
+    <BaseIcon
+      v-if="leftIcon"
+      :icon="leftIcon"
+    />
+    {{ text }}
+    <BaseIcon
+      v-if="rightIcon"
+      :icon="rightIcon"
+    />
   </button>
 </template>
 
 <style>
 .button {
-  height: 32px;
+  height: var(--height);
   padding: 0 16px;
 }
 
 .rounded-full {
-  border-radius: calc(32px / 2);
+  border-radius: calc(var(--height) / 2);
 }
 </style>

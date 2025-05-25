@@ -10,7 +10,7 @@ const { enabled = true } = defineProps<{
 
 <template>
   <span
-    class="default-height icon"
+    class="icon"
     :class="{ [icon]: true, enabled }"
   ></span>
 </template>
