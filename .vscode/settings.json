@@ -1,5 +1,5 @@
 {
-  "cSpell.words": ["vuetify"],
+  "cSpell.words": ["composables", "vuetify"],
   "editor.codeActionsOnSave": {
     "quickfix.biome": "explicit",
     "source.organizeImports.biome": "explicit"
