@@ -10,7 +10,7 @@
   },
   "scripts": {
     "build": "npm run type-check && vite build && cp ./src/main/main.ts ./dist/main.js && cp -r ./src/@assets ./dist/",
-    "start": "npm-run-all2 --parallel start:vite start:electron",
+    "start": "npm-run-all2 --parallel start:vite --race start:electron",
     "start:electron": "set NODE_ENV=development && electron .",
     "start:vite": "vite",
     "test": "vitest",
@@ -18,23 +18,23 @@
     "type-check": "vue-tsc --noEmit --skipLibCheck"
   },
   "dependencies": {
-    "vue": "^3.5.14"
+    "vue": "^3.5.16"
   },
   "devDependencies": {
     "@biomejs/biome": "1.9.4",
     "@mdi/font": "^7.4.47",
     "@playwright/test": "^1.52.0",
-    "@types/node": "^22.15.18",
+    "@types/node": "^22.15.29",
     "@vitejs/plugin-vue": "^5.2.4",
     "@vue/test-utils": "^2.4.6",
     "@vue/tsconfig": "^0.7.0",
-    "electron": "^36.2.1",
-    "happy-dom": "^17.4.7",
-    "npm-run-all2": "^8.0.2",
+    "electron": "^36.3.2",
+    "happy-dom": "^17.5.6",
+    "npm-run-all2": "^8.0.4",
     "typescript": "^5.8.3",
     "vite": "^6.3.5",
-    "vitest": "^3.1.3",
+    "vitest": "^3.1.4",
     "vue-tsc": "^2.2.10",
-    "vuetify": "^3.8.5"
+    "vuetify": "^3.8.7"
   }
 }

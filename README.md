@@ -4,11 +4,11 @@
 [![npm version](https://img.shields.io/badge/npm-11.4.0-green)](https://www.npmjs.com/)
 
 [![npm version](https://img.shields.io/badge/vite-6.3.5-green)](https://www.npmjs.com/package/vite)
-[![npm version](https://img.shields.io/badge/vitest-3.1.3-green)](https://www.npmjs.com/package/vitest)
+[![npm version](https://img.shields.io/badge/vitest-3.1.4-green)](https://www.npmjs.com/package/vitest)
 
 [![npm version](https://img.shields.io/badge/typescript-5.8.3-green)](https://www.npmjs.com/package/typescript)
-[![npm version](https://img.shields.io/badge/vue-3.5.14-green)](https://www.npmjs.com/package/vue)
-[![npm version](https://img.shields.io/badge/vuetify-3.8.5-green)](https://www.npmjs.com/package/vuetify)
+[![npm version](https://img.shields.io/badge/vue-3.5.16-green)](https://www.npmjs.com/package/vue)
+[![npm version](https://img.shields.io/badge/vuetify-3.8.7-green)](https://www.npmjs.com/package/vuetify)
 
 ## VScode Extensions
 
