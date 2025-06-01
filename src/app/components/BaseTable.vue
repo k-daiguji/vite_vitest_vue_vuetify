@@ -1,7 +1,9 @@
 <script setup lang="ts">
-const { height = "auto" } = defineProps<{
-  data: { headers: string[]; rows: string[][] };
-  height: string;
+import type { Table } from "@/app/types/table";
+
+const { maxHeight = "auto" } = defineProps<{
+  table: Table;
+  maxHeight?: number | "auto";
 }>();
 </script>
 
@@ -11,7 +13,7 @@ const { height = "auto" } = defineProps<{
       <thead>
         <tr>
           <th
-            v-for="(header, i) in data.headers"
+            v-for="(header, i) in table.headers"
             :key="i"
           >
             {{ header }}
@@ -20,14 +22,14 @@ const { height = "auto" } = defineProps<{
       </thead>
       <tbody>
         <tr
-          v-for="(row, i) in data.rows"
+          v-for="(row, i) in table.bodies"
           :key="i"
         >
           <td
-            v-for="(cell, j) in row"
+            v-for="({ cell, indent = 0 }, j) in row"
             :key="j"
           >
-            {{ cell }}
+            <span :class="`pl-${indent}`">{{ cell }}</span>
           </td>
         </tr>
       </tbody>
@@ -38,7 +40,7 @@ const { height = "auto" } = defineProps<{
 <style scoped>
 .container {
   cursor: default;
-  height: v-bind(height);
+  height: v-bind(maxHeight) + "px";
   overflow: auto;
   scrollbar-gutter: stable;
 }
@@ -51,7 +53,7 @@ table {
   thead {
     th {
       background-color: var(--bg-color);
-      border-bottom: solid 1px #000;
+      border-bottom: 1px solid #000;
       height: var(--height);
       padding: 0 8px;
       position: sticky;
@@ -59,8 +61,8 @@ table {
       z-index: 1;
 
       &:first-child {
-        position: sticky;
         left: 0;
+        position: sticky;
         z-index: 3;
       }
     }
@@ -68,13 +70,13 @@ table {
 
   td {
     background-color: var(--bg-color);
-    border-bottom: solid 1px #b0b0b0;
+    border-bottom: 1px solid #b0b0b0;
     height: var(--height);
     padding: 0 8px;
 
     &:first-child {
-      position: sticky;
       left: 0;
+      position: sticky;
       z-index: 2;
     }
   }
