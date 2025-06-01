@@ -1,9 +1,12 @@
 <script setup lang="ts">
-import { ref } from "vue";
+import { computed, defineComponent, ref } from "vue";
 
+import Accordion from "@/app/components/BaseAccordion.vue";
 import BaseButton from "@/app/components/BaseButton.vue";
 import BaseTable from "@/app/components/BaseTable.vue";
+import { useSection } from "@/app/composables/useAccordion";
 import { theme } from "@/app/constants/color";
+import Dummy from "@/app/views/DummyComponent.vue";
 
 const state = ref(false);
 
@@ -27,6 +30,20 @@ const table = {
     [{ cell: "test4", indent: 0 }, { cell: 28 }, { cell: 29 }, { cell: 30 }],
   ],
 };
+
+const title = ref("");
+const a = useSection(
+  computed(() => true),
+  { header: "Dummy 1", body: Dummy },
+);
+const b = useSection(a.nextEnabled, {
+  header: "Dummy 2",
+  body: Dummy,
+});
+const c = useSection(b.nextEnabled, {
+  header: "Dummy 3",
+  body: Dummy,
+});
 </script>
 
 <template>
@@ -45,5 +62,9 @@ const table = {
       @click="state = true"
     />
     <BaseTable :table="table" />
+    <Accordion
+      v-model="title"
+      :sections="[a, b, c]"
+    />
   </div>
 </template>
