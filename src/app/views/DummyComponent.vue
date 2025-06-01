@@ -1,7 +1,8 @@
 <script setup lang="ts">
-defineProps<{ message?: string }>();
+defineEmits<{ finalize: []; reset: [] }>();
 </script>
 
 <template>
-  <div>{{ message ?? "111" }}</div>
+  <button @click="$emit('finalize')">Finalize</button>
+  <button @click="$emit('reset')">Reset</button>
 </template>
