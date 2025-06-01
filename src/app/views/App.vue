@@ -26,7 +26,8 @@ import Settings from "@/app/views/AreaSettings.vue";
     color: #b0b0b0;
   }
 
-  &:enabled {
+  &:enabled,
+  &.enabled {
     background-color: aquamarine;
     color: #000;
 
@@ -39,6 +40,16 @@ import Settings from "@/app/views/AreaSettings.vue";
       background-color: aqua;
       color: #fff;
     }
+  }
+}
+
+.primary-table {
+  thead > tr {
+    background-color: deepskyblue;
+  }
+
+  tbody > tr:nth-child(even) {
+    background-color: skyblue;
   }
 }
 </style>

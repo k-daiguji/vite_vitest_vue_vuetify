@@ -1,32 +1,46 @@
 import { mount } from "@vue/test-utils";
 import { describe, test } from "vitest";
 
-import Icon from "@/app/components/BaseIcon.vue";
-import { icon } from "@/app/constants/icon";
-
-const baseClasses = ["icon", ...icon.settings.split(" ")];
+import Table from "@/app/components/BaseTable.vue";
 
 test("Mounted", ({ expect }) => {
-  using wrapper = mount(Icon, { props: { icon: icon.settings } });
+  const table = {
+    headers: ["Header 1", "Header 2", "Header 3"],
+    bodies: [
+      [{ cell: "title1", indent: 0 }, { cell: "value1" }, { cell: "value2" }],
+      [{ cell: "title1-1", indent: 1 }, { cell: "value3" }, { cell: "value4" }],
+      [
+        { cell: "title1-1-1", indent: 2 },
+        { cell: "value5" },
+        { cell: "value6" },
+      ],
+    ],
+  };
 
-  expect(wrapper.find("span").classes()).toStrictEqual([
-    ...baseClasses,
-    "enabled",
+  using wrapper = mount(Table, { props: { table } });
+
+  const headers = wrapper.findAll("th").map(th => th.text());
+  expect(headers).toStrictEqual(["Header 1", "Header 2", "Header 3"]);
+  const bodies = wrapper
+    .findAll("tbody tr")
+    .map(tr =>
+      tr.findAll("span").map(s => ({ classes: s.classes(), cell: s.text() })),
+    );
+  expect(bodies).toStrictEqual([
+    [
+      { classes: ["pl-0"], cell: "title1" },
+      { classes: ["pl-0"], cell: "value1" },
+      { classes: ["pl-0"], cell: "value2" },
+    ],
+    [
+      { classes: ["pl-1"], cell: "title1-1" },
+      { classes: ["pl-0"], cell: "value3" },
+      { classes: ["pl-0"], cell: "value4" },
+    ],
+    [
+      { classes: ["pl-2"], cell: "title1-1-1" },
+      { classes: ["pl-0"], cell: "value5" },
+      { classes: ["pl-0"], cell: "value6" },
+    ],
   ]);
-  expect(wrapper.text()).toBe("");
-});
-
-describe("Changed props", () => {
-  test("enabled", async ({ expect }) => {
-    using wrapper = mount(Icon, { props: { icon: icon.settings } });
-    const testee = wrapper.find("span");
-
-    await wrapper.setProps({ enabled: false });
-
-    expect(testee.classes()).toStrictEqual(baseClasses);
-
-    await wrapper.setProps({ enabled: true });
-
-    expect(testee.classes()).toStrictEqual([...baseClasses, "enabled"]);
-  });
 });
