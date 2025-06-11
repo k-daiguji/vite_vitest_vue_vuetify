@@ -7,9 +7,11 @@ import BaseTable from "@/app/components/BaseTable.vue";
 import { useSection } from "@/app/composables/useAccordion";
 import { theme } from "@/app/constants/color";
 import Dummy from "@/app/views/DummyComponent.vue";
+import { NumberPixel } from "@/app/models/pixelNumber";
 
 const state = ref(false);
 
+const maxHeight = NumberPixel.create(200);
 const table = {
   headers: ["", "Header 2", "Header 3", "Header 4"],
   bodies: [
@@ -61,7 +63,10 @@ const c = useSection(b.nextEnabled, {
       text="ON"
       @click="state = true"
     />
-    <BaseTable :table="table" />
+    <BaseTable
+      :max-height="maxHeight"
+      :table="table"
+    />
     <Accordion
       v-model="title"
       :sections="[a, b, c]"

@@ -1,10 +1,12 @@
 <script setup lang="ts">
+import { computed } from "vue";
+
+import type { Pixel } from "@/app/types/pixel";
 import type { Table } from "@/app/types/table";
 
-const { maxHeight = "auto" } = defineProps<{
-  table: Table;
-  maxHeight?: number | "auto";
-}>();
+const { maxHeight } = defineProps<{ table: Table; maxHeight: Pixel }>();
+
+const height = computed(() => maxHeight.value);
 </script>
 
 <template>
@@ -40,7 +42,7 @@ const { maxHeight = "auto" } = defineProps<{
 <style scoped>
 .container {
   cursor: default;
-  height: v-bind(maxHeight) + "px";
+  max-height: v-bind(height);
   overflow: auto;
   scrollbar-gutter: stable;
 }
@@ -50,21 +52,19 @@ table {
   border-spacing: 0;
   white-space: nowrap;
 
-  thead {
-    th {
-      background-color: var(--bg-color);
-      border-bottom: 1px solid #000;
-      height: var(--height);
-      padding: 0 8px;
-      position: sticky;
-      top: 0;
-      z-index: 1;
+  th {
+    background-color: var(--bg-color);
+    border-bottom: 1px solid #000;
+    height: var(--height);
+    padding: 0 8px;
+    position: sticky;
+    top: 0;
+    z-index: 1;
 
-      &:first-child {
-        left: 0;
-        position: sticky;
-        z-index: 3;
-      }
+    &:first-child {
+      left: 0;
+      position: sticky;
+      z-index: 3;
     }
   }
 
