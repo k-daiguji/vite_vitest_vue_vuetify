@@ -23,18 +23,18 @@
   "devDependencies": {
     "@biomejs/biome": "1.9.4",
     "@mdi/font": "^7.4.47",
-    "@playwright/test": "^1.52.0",
-    "@types/node": "^22.15.29",
+    "@playwright/test": "^1.53.0",
+    "@types/node": "^24.0.1",
     "@vitejs/plugin-vue": "^5.2.4",
     "@vue/test-utils": "^2.4.6",
     "@vue/tsconfig": "^0.7.0",
-    "electron": "^36.3.2",
-    "happy-dom": "^17.5.6",
+    "electron": "^36.4.0",
+    "happy-dom": "^18.0.1",
     "npm-run-all2": "^8.0.4",
     "typescript": "^5.8.3",
     "vite": "^6.3.5",
-    "vitest": "^3.1.4",
+    "vitest": "^3.2.3",
     "vue-tsc": "^2.2.10",
-    "vuetify": "^3.8.7"
+    "vuetify": "^3.8.9"
   }
 }
