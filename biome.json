@@ -2,7 +2,6 @@
   "$schema": "https://biomejs.dev/schemas/1.9.2/schema.json",
   "linter": {
     "rules": {
-      "all": true,
       "correctness": {
         "noUnusedImports": "off"
       }
@@ -14,14 +13,12 @@
     "indentStyle": "space",
     "useEditorconfig": true
   },
-  "organizeImports": {
-    "include": ["src/**/*.ts"]
-  },
   "javascript": {
     "formatter": {
       "arrowParentheses": "asNeeded",
       "attributePosition": "multiline",
-      "indentStyle": "space"
+      "indentStyle": "space",
+      "lineEnding": "crlf"
     }
   },
   "json": {

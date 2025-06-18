@@ -1,7 +1,7 @@
 echo "Checking for outdated packages in node_modules..."
 npm outdated
 
-packages=$(npm outdated | grep node_modules | sed 's/\([a-z]\)\s\+\([0-9.]\+\)\s\+\([0-9.]\+\)\s\+\([0-9.]\+\).*/\1,\2,\3,\4/')
+packages=$(npm outdated | grep node_modules | sed 's/\([a-z0-9]\)\s\+\([0-9.]\+\)\s\+\([0-9.]\+\)\s\+\([0-9.]\+\).*/\1,\2,\3,\4/')
 if [ -n "${packages}" ]; then
   update_packages
 else
@@ -27,6 +27,7 @@ update_packages() {
         update_versions 2
         update_files
         echo "All packages updated to the wanted version."
+        npm outdated
         break;;
       3)
         echo "Exited."
@@ -36,6 +37,7 @@ update_packages() {
 }
 
 update_versions () {
+  npm update > /dev/null
   for package in $packages
   do
     array=(${package//,/ })

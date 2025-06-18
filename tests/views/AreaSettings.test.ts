@@ -1,11 +1,11 @@
 import { mount } from "@vue/test-utils";
 import { test } from "vitest";
 
+import { dialogStub } from "#/stubs/dialog";
 import Button from "@/app/components/BaseButton.vue";
 import { theme } from "@/app/constants/color";
 import { dialogSize } from "@/app/constants/dialog";
 import Settings from "@/app/views/AreaSettings.vue";
-import { dialogStub } from "#/stubs/dialog";
 
 test("Mounted", ({ expect }) => {
   using wrapper = mount(Settings, {
