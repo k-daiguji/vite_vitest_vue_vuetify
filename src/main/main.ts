@@ -1,4 +1,4 @@
-import { BrowserWindow, app } from "electron";
+import { app, BrowserWindow } from "electron";
 
 if (process.platform === "darwin") {
   app.quit();

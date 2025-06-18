@@ -1,5 +1,6 @@
 <script setup lang="ts">
-import { watch, type ComputedRef, type Component } from "vue";
+import type { Component, ComputedRef } from "vue";
+import { watch } from "vue";
 
 import Icon from "@/app/components/BaseIcon.vue";
 import { icon } from "@/app/constants/icon";

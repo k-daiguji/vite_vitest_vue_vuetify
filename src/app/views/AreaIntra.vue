@@ -6,8 +6,8 @@ import BaseButton from "@/app/components/BaseButton.vue";
 import BaseTable from "@/app/components/BaseTable.vue";
 import { useSection } from "@/app/composables/useAccordion";
 import { theme } from "@/app/constants/color";
-import Dummy from "@/app/views/DummyComponent.vue";
 import { NumberPixel } from "@/app/models/pixelNumber";
+import Dummy from "@/app/views/DummyComponent.vue";
 
 const state = ref(false);
 
