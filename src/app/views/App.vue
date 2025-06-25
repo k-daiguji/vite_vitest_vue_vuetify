@@ -1,12 +1,22 @@
 <script setup lang="ts">
+import { ref } from "vue";
+
 import Intra from "@/app/views/AreaIntra.vue";
 import Settings from "@/app/views/AreaSettings.vue";
+import Sandbox from "@/app/views/Sandbox.vue";
+
+const input = ref("");
 </script>
 
 <template>
   <div class="root">
     <Intra/>
     <Settings class="pt-2"/>
+    <Sandbox
+      class="pt-2"
+      v-model="input"
+      placeholder="Test label"
+    />
   </div>
 </template>
 
