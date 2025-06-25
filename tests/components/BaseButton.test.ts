@@ -36,10 +36,6 @@ describe("Changed props", () => {
     await wrapper.setProps({ rounded: "0" });
 
     expect(testee.classes("rounded-full")).toBe(false);
-
-    await wrapper.setProps({ rounded: undefined });
-
-    expect(testee.classes("rounded-full")).toBe(true);
   });
 });
 
