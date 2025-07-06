@@ -48,6 +48,10 @@ update_versions () {
     npm i $name@$next_version > /dev/null
     sed -i "s/$name-$current_version/$name-$next_version/" README.md > /dev/null
     echo "Updated $name to version $next_version"
+    if [ ${name} = "electron" ]; then
+      echo "Electron was updated, please check the release notes for node version compatibility."
+      start chrome "https://releases.electronjs.org/release"
+    fi
   done
 }
 

@@ -5,8 +5,7 @@
   "type": "module",
   "main": "./dist/main.js",
   "volta": {
-    "node": "24.0.2",
-    "npm": "11.4.0"
+    "node": "24.0.2"
   },
   "scripts": {
     "build": "npm run type-check && vite build && cp ./src/main/main.ts ./dist/main.js && cp -r ./src/@assets ./dist/",
