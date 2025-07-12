@@ -1,12 +1,12 @@
 <script setup lang="ts">
 import { computed } from "vue";
 
-import type { Pixel } from "@/app/types/pixel";
-import type { Table } from "@/app/types/table";
+import type { Pixel } from "@/utilities/types/pixel";
+import type { Table } from "@/utilities/types/table";
 
 const { maxHeight } = defineProps<{ table: Table; maxHeight: Pixel }>();
 
-const height = computed(() => maxHeight.value);
+const _height = computed(() => maxHeight.value);
 </script>
 
 <template>
@@ -42,7 +42,7 @@ const height = computed(() => maxHeight.value);
 <style scoped>
 .container {
   cursor: default;
-  max-height: v-bind(height);
+  max-height: v-bind(_height);
   overflow: auto;
   scrollbar-gutter: stable;
 }

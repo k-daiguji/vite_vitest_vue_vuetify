@@ -1,10 +1,10 @@
 import { mount } from "@vue/test-utils";
 import { test } from "vitest";
 
-import Button from "@/app/components/BaseButton.vue";
-import Table from "@/app/components/BaseTable.vue";
-import { theme } from "@/app/constants/color";
-import Intra from "@/app/views/AreaIntra.vue";
+import Intra from "@/client/views/AreaIntra.vue";
+import Button from "@/utilities/components/BaseButton.vue";
+import Table from "@/utilities/components/BaseTable.vue";
+import { theme } from "@/utilities/constants/color";
 
 test("Mounted", ({ expect }) => {
   using wrapper = mount(Intra);

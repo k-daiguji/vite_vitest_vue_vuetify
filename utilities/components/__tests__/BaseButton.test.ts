@@ -1,7 +1,7 @@
 import { mount } from "@vue/test-utils";
 import { describe, test } from "vitest";
 
-import Button from "@/app/components/BaseButton.vue";
+import Button from "@/utilities/components/BaseButton.vue";
 
 test("Mounted", ({ expect }) => {
   const text = "dummyText";

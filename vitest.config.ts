@@ -12,6 +12,6 @@ export default mergeConfig(viteConfig, {
         inline: ["vuetify"],
       },
     },
-    setupFiles: ["tests/setup"],
+    setupFiles: ["type_extensions/unitTest.ts"],
   },
 });

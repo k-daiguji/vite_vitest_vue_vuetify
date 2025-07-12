@@ -1,4 +1,4 @@
-import { test, _electron as electron, expect } from "@playwright/test";
+import { _electron as electron, expect, test } from "@playwright/test";
 
 test("visits the app root url", async () => {
   const app = await electron.launch({ args: ["./dist/main.js"] });

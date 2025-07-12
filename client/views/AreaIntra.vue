@@ -1,20 +1,20 @@
 <script setup lang="ts">
-import { computed, defineComponent, ref } from "vue";
+import { computed, ref } from "vue";
 
-import Accordion from "@/app/components/BaseAccordion.vue";
-import BaseButton from "@/app/components/BaseButton.vue";
-import BaseTable from "@/app/components/BaseTable.vue";
-import { useSection } from "@/app/composables/useAccordion";
-import { theme } from "@/app/constants/color";
-import { NumberPixel } from "@/app/models/pixelNumber";
-import type { Table } from "@/app/types/table";
-import Dummy from "@/app/views/DummyComponent.vue";
+import Dummy from "@/client/views/DummyComponent.vue";
+import Accordion from "@/utilities/components/BaseAccordion.vue";
+import BaseButton from "@/utilities/components/BaseButton.vue";
+import BaseTable from "@/utilities/components/BaseTable.vue";
+import { useSection } from "@/utilities/composables/useAccordion";
+import { theme } from "@/utilities/constants/color";
+import { NumberPixel } from "@/utilities/models/pixelNumber";
+import type { Table } from "@/utilities/types/table";
 
-const state = ref(false);
+const _state = ref(false);
 
-const maxHeight = NumberPixel.create(200);
+const _maxHeight = NumberPixel.create(200);
 
-const table = {
+const _table = {
   headers: ["", "Header 2", "Header 3", "Header 4"],
   bodies: [
     [{ cell: "test1", indent: 0 }, { cell: "1" }, { cell: "2" }, { cell: "3" }],
@@ -75,7 +75,7 @@ const table = {
   ],
 } satisfies Table;
 
-const title = ref("");
+const _title = ref("");
 const a = useSection(
   computed(() => true),
   { header: "Dummy 1", body: Dummy },
@@ -84,7 +84,7 @@ const b = useSection(a.nextEnabled, {
   header: "Dummy 2",
   body: Dummy,
 });
-const c = useSection(b.nextEnabled, {
+const _c = useSection(b.nextEnabled, {
   header: "Dummy 3",
   body: Dummy,
 });
@@ -92,26 +92,26 @@ const c = useSection(b.nextEnabled, {
 
 <template>
   <div>
-    <p id="state">State: {{ state }}</p>
+    <p id="state">State: {{ _state }}</p>
     <BaseButton
       id="off-button"
       :class="theme.primary"
       text="OFF"
-      @click="state = false"
+      @click="_state = false"
     />
     <BaseButton
       id="on-button"
       :class="theme.primary"
       text="ON"
-      @click="state = true"
+      @click="_state = true"
     />
     <BaseTable
-      :max-height="maxHeight"
-      :table="table"
+      :max-height="_maxHeight"
+      :table="_table"
     />
     <Accordion
-      v-model="title"
-      :sections="[a, b, c]"
+      v-model="_title"
+      :sections="[a, b, _c]"
     />
   </div>
 </template>
