@@ -8,14 +8,14 @@
     "node": "24.0.2"
   },
   "scripts": {
-    "build": "npm run type-check && vite build && cp ./src/main/main.ts ./dist/main.js && cp -r ./src/@assets ./dist/",
+    "build": "npm run type-check && vite build && cp ./client/main.ts ./dist/main.js && cp -r ./client/@assets ./dist/",
     "start": "npm-run-all2 --parallel start:vite --race start:electron",
     "start:electron": "set NODE_ENV=development && electron .",
     "start:vite": "vite",
     "test": "vitest",
     "test:e2e": "playwright test --project=chromium",
     "type-check": "vue-tsc --noEmit --skipLibCheck",
-    "check": "biome check --write src tests"
+    "check": "biome check --write client plugins type_extensions utilities"
   },
   "dependencies": {
     "vue": "^3.5.17"

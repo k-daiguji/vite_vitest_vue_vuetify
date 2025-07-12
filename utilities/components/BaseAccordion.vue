@@ -2,8 +2,8 @@
 import type { Component, ComputedRef } from "vue";
 import { watch } from "vue";
 
-import Icon from "@/app/components/BaseIcon.vue";
-import { icon } from "@/app/constants/icon";
+import Icon from "@/utilities/components/BaseIcon.vue";
+import { icon } from "@/utilities/constants/icon";
 
 const activeTitle = defineModel<string>({ required: true });
 const { enabled = true } = defineProps<{
@@ -27,7 +27,7 @@ watch(
   },
 );
 
-const switched = (title: string, isOpen: boolean) => {
+const _switched = (title: string, isOpen: boolean) => {
   if (isOpen) {
     activeTitle.value = title;
   } else if (title === activeTitle.value) {
@@ -42,7 +42,7 @@ const switched = (title: string, isOpen: boolean) => {
     :key="key"
     :class="{ disabled: !enabled.value }"
     :open="header === activeTitle"
-    @toggle="switched(header, $event.newState === 'open')"
+    @toggle="_switched(header, $event.newState === 'open')"
   >
     <summary class="cursor-pointer default-height">
       <span class="mr-auto">{{ header }}</span>

@@ -1,4 +1,4 @@
-import type { Pixel } from "@/app/types/pixel";
+import type { Pixel } from "@/utilities/types/pixel";
 
 export class AutoPixel implements Pixel {
   private readonly _value = "auto";

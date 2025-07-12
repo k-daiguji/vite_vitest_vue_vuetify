@@ -1,5 +1,5 @@
 {
-  "include": ["env.d.ts", "src", "tests"],
+  "include": ["env.d.ts", "client", "plugins", "type_extensions", "utilities"],
   "compilerOptions": {
     "allowImportingTsExtensions": true,
     "baseUrl": ".",
@@ -20,8 +20,7 @@
     "noPropertyAccessFromIndexSignature": true,
     "outDir": "dist",
     "paths": {
-      "@/*": ["./src/*"],
-      "#/*": ["./tests/*"]
+      "@/*": ["./*"]
     },
     "removeComments": true,
     "strict": true,
