@@ -4,7 +4,7 @@
     "allowImportingTsExtensions": true,
     "baseUrl": ".",
     "composite": true,
-    // "erasableSyntaxOnly": true,
+    "erasableSyntaxOnly": true,
     "esModuleInterop": true,
     "exactOptionalPropertyTypes": true,
     "module": "ESNext",
@@ -16,7 +16,7 @@
     "noImplicitOverride": true,
     "noImplicitThis": true,
     "noUncheckedIndexedAccess": true,
-    // "noUncheckedSideEffectImports": true,
+    "noUncheckedSideEffectImports": true,
     "noPropertyAccessFromIndexSignature": true,
     "outDir": "dist",
     "paths": {
