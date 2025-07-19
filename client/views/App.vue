@@ -21,6 +21,9 @@ const _input = ref("");
 </template>
 
 <style>
+@import "@mdi/font/css/materialdesignicons.css";
+@import "vuetify/styles";
+
 .root {
   --bg-color: #f0f0f0;
   --height: 32px;
