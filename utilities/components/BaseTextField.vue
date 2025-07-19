@@ -2,15 +2,15 @@
 import { computed } from "vue";
 import type { Validator } from "@/utilities/types/validator";
 
-const _input = defineModel<string>({ required: true });
+const input = defineModel<string>({ required: true });
 const { validators = [] } = defineProps<{
   placeholder: string;
   validators?: Validator[];
 }>();
 
-const _error = computed(() => {
+const error = computed(() => {
   try {
-    validators.forEach(validator => validator.validate(_input.value));
+    validators.forEach(validator => validator.validate(input.value));
     return "";
   } catch (error) {
     return error instanceof Error ? error.message : "Unknown validation error";
@@ -21,7 +21,7 @@ const _error = computed(() => {
 <template>
   <div class="container">
     <input
-      v-model="_input"
+      v-model="input"
       name="input"
     />
     <label
@@ -34,7 +34,7 @@ const _error = computed(() => {
       v-if="validators.length"
       class="error"
     >
-      {{ _error }}
+      {{ error }}
     </span>
   </div>
 </template>

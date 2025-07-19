@@ -5,7 +5,7 @@ import Intra from "@/client/views/AreaIntra.vue";
 import Settings from "@/client/views/AreaSettings.vue";
 import Sandbox from "@/client/views/Sandbox.vue";
 
-const _input = ref("");
+const input = ref("");
 </script>
 
 <template>
@@ -14,7 +14,7 @@ const _input = ref("");
     <Settings class="pt-2"/>
     <Sandbox
       class="pt-2"
-      v-model="_input"
+      v-model="input"
       placeholder="Test label"
     />
   </div>

@@ -1,25 +1,25 @@
 <script setup lang="ts">
 import BaseTextField from "@/utilities/components/BaseTextField.vue";
 
-const _input = defineModel<string>({ required: true });
+const input = defineModel<string>({ required: true });
 defineProps<{ placeholder: string }>();
 </script>
 
 <template>
   <div>
     <v-text-field
-      v-model="_input"
+      v-model="input"
       bg-color="rgb(128, 255, 212)"
       :label="placeholder"
       :rules="[
-        () => !!_input || 'This field is required',
-        () => !!_input && _input.length <= 25 || 'Address must be less than 25 characters',
+        () => !!input || 'This field is required',
+        () => !!input && input.length <= 25 || 'Address must be less than 25 characters',
       ]"
       variant="solo"
       class="mb-4"
     />
     <BaseTextField
-      v-model="_input"
+      v-model="input"
       :placeholder="placeholder"
     />
   </div>

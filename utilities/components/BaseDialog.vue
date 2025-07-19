@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import type { dialogSize } from "@/utilities/constants/dialog";
 
-const _isVisible = defineModel<boolean>({ required: true });
+const isVisible = defineModel<boolean>({ required: true });
 const { closableOutside = false, width = "auto" } = defineProps<{
   closableOutside?: boolean;
   width?: (typeof dialogSize)[keyof typeof dialogSize];
@@ -10,7 +10,7 @@ const { closableOutside = false, width = "auto" } = defineProps<{
 
 <template>
   <v-dialog
-    v-model="_isVisible"
+    v-model="isVisible"
     no-click-animation
     :persistent="!closableOutside"
     :width="width"

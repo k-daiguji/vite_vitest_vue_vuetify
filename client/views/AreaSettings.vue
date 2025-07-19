@@ -7,7 +7,7 @@ import { theme } from "@/utilities/constants/color";
 import { dialogSize } from "@/utilities/constants/dialog";
 import { icon } from "@/utilities/constants/icon";
 
-const _isVisible = ref(false);
+const isVisible = ref(false);
 </script>
 
 <template>
@@ -16,17 +16,17 @@ const _isVisible = ref(false);
       :class="theme.primary"
       :left-icon="icon.settings"
       rounded="0"
-      @click="_isVisible = true"
+      @click="isVisible = true"
     />
     <BaseDialog
-      v-model="_isVisible"
+      v-model="isVisible"
       :width="dialogSize.middle"
     >
       <div class="text-right">
         <BaseButton
           :class="theme.primary"
           text="Close"
-          @click="_isVisible = false"
+          @click="isVisible = false"
         />
       </div>
     </BaseDialog>

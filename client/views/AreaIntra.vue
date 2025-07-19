@@ -10,11 +10,11 @@ import { theme } from "@/utilities/constants/color";
 import { NumberPixel } from "@/utilities/models/pixelNumber";
 import type { Table } from "@/utilities/types/table";
 
-const _state = ref(false);
+const state = ref(false);
 
-const _maxHeight = NumberPixel.create(200);
+const maxHeight = NumberPixel.create(200);
 
-const _table = {
+const table = {
   headers: ["", "Header 2", "Header 3", "Header 4"],
   bodies: [
     [{ cell: "test1", indent: 0 }, { cell: "1" }, { cell: "2" }, { cell: "3" }],
@@ -75,7 +75,7 @@ const _table = {
   ],
 } satisfies Table;
 
-const _title = ref("");
+const title = ref("");
 const a = useSection(
   computed(() => true),
   { header: "Dummy 1", body: Dummy },
@@ -84,7 +84,7 @@ const b = useSection(a.nextEnabled, {
   header: "Dummy 2",
   body: Dummy,
 });
-const _c = useSection(b.nextEnabled, {
+const c = useSection(b.nextEnabled, {
   header: "Dummy 3",
   body: Dummy,
 });
@@ -92,26 +92,26 @@ const _c = useSection(b.nextEnabled, {
 
 <template>
   <div>
-    <p id="state">State: {{ _state }}</p>
+    <p id="state">State: {{ state }}</p>
     <BaseButton
       id="off-button"
       :class="theme.primary"
       text="OFF"
-      @click="_state = false"
+      @click="state = false"
     />
     <BaseButton
       id="on-button"
       :class="theme.primary"
       text="ON"
-      @click="_state = true"
+      @click="state = true"
     />
     <BaseTable
-      :max-height="_maxHeight"
-      :table="_table"
+      :max-height="maxHeight"
+      :table="table"
     />
     <Accordion
-      v-model="_title"
-      :sections="[a, b, _c]"
+      v-model="title"
+      :sections="[a, b, c]"
     />
   </div>
 </template>

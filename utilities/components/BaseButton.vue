@@ -13,13 +13,13 @@ const { enabled = true, rounded } = defineProps<{
 }>();
 defineEmits<{ click: [] }>();
 
-const _borderRadius = computed(() => (rounded === "0" ? "" : "rounded-full"));
+const borderRadius = computed(() => (rounded === "0" ? "" : "rounded-full"));
 </script>
 
 <template>
   <button
     class="button"
-    :class="_borderRadius"
+    :class="borderRadius"
     :disabled="!enabled"
     @click="$emit('click')"
   >
