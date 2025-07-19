@@ -6,7 +6,7 @@ import type { Table } from "@/utilities/types/table";
 
 const { maxHeight } = defineProps<{ table: Table; maxHeight: Pixel }>();
 
-const _height = computed(() => maxHeight.value);
+const height = computed(() => maxHeight.value);
 </script>
 
 <template>
@@ -42,7 +42,7 @@ const _height = computed(() => maxHeight.value);
 <style scoped>
 .container {
   cursor: default;
-  max-height: v-bind(_height);
+  max-height: v-bind(height);
   overflow: auto;
   scrollbar-gutter: stable;
 }

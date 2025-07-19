@@ -27,7 +27,7 @@ watch(
   },
 );
 
-const _switched = (title: string, isOpen: boolean) => {
+const switched = (title: string, isOpen: boolean) => {
   if (isOpen) {
     activeTitle.value = title;
   } else if (title === activeTitle.value) {
@@ -42,7 +42,7 @@ const _switched = (title: string, isOpen: boolean) => {
     :key="key"
     :class="{ disabled: !enabled.value }"
     :open="header === activeTitle"
-    @toggle="_switched(header, $event.newState === 'open')"
+    @toggle="switched(header, $event.newState === 'open')"
   >
     <summary class="cursor-pointer default-height">
       <span class="mr-auto">{{ header }}</span>
