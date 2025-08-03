@@ -23,6 +23,7 @@ const input = ref("");
 <style>
 @import "@mdi/font/css/materialdesignicons.css";
 @import "vuetify/styles";
+@import "@/utilities/css/global.css";
 
 .root {
   --bg-color: #f0f0f0;

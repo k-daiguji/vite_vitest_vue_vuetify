@@ -1,12 +1,29 @@
 <script setup lang="ts">
+import { ref } from "vue";
+
+import BaseList from "@/utilities/components/BaseList.vue";
 import BaseTextField from "@/utilities/components/BaseTextField.vue";
 
 const input = defineModel<string>({ required: true });
 defineProps<{ placeholder: string }>();
+
+const activeIndex = ref(-1);
 </script>
 
 <template>
   <div>
+    <BaseList
+      class="my-2 primary-color"
+      v-model="activeIndex"
+      :lists="[
+        ['1', 'Item 2', 'Item 3'],
+        ['A', 'Item B', 'Item C'],
+        ['1', 'Item 2', 'Item 3'],
+        ['A', 'Item B', 'Item C'],
+      ]"
+      :maxDisplay="3"
+    >
+    </BaseList>
     <v-text-field
       v-model="input"
       bg-color="rgb(128, 255, 212)"
