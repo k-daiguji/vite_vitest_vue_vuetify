@@ -1,19 +1,30 @@
 <script setup lang="ts">
-const activeIndex = defineModel<number>({ required: true });
-const { enabled = true } = defineProps<{
-  lists: string[][];
+import { computed, useTemplateRef } from "vue";
+
+import { useScroll } from "@/utilities/composables/useScroll";
+
+const { body, enabled = true } = defineProps<{
+  body: { activeIndex: number; rows: string[][] };
   maxDisplay: number;
   enabled?: boolean;
 }>();
+defineEmits<{ selected: [index: number] }>();
+
+const container = useTemplateRef("container");
+const activeIndex = computed(() => body.activeIndex);
+useScroll(container, activeIndex);
 </script>
 
 <template>
-  <div class="lists">
+  <div
+    ref="container"
+    class="lists"
+  >
     <div
-      v-for="(cells, i) in lists"
+      v-for="(cells, i) in body.rows"
       :key="i"
-      :class="{ enabled, selected: activeIndex === i }"
-      @click="activeIndex = i"
+      :class="{ enabled, selected: body.activeIndex === i }"
+      @click="$emit('selected', i)"
     >
       <div
         v-for="(cell, j) in cells"

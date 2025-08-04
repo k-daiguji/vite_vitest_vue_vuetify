@@ -14,14 +14,34 @@ const activeIndex = ref(-1);
   <div>
     <BaseList
       class="my-2 primary-color"
-      v-model="activeIndex"
-      :lists="[
+      :body="{
+        activeIndex,
+        rows: [
         ['1', 'Item 2', 'Item 3'],
         ['A', 'Item B', 'Item C'],
-        ['1', 'Item 2', 'Item 3'],
-        ['A', 'Item B', 'Item C'],
-      ]"
+        ['2', 'Item 2', 'Item 3'],
+        ['B', 'Item B', 'Item C'],
+        ['3', 'Item 2', 'Item 3'],
+        ['C', 'Item B', 'Item C'],
+      ]}"
       :maxDisplay="3"
+      @selected="activeIndex = $event"
+    >
+    </BaseList>
+    <BaseList
+      class="my-2 primary-color"
+      :body="{
+        activeIndex,
+        rows: [
+        ['1', 'Item 2', 'Item 3'],
+        ['A', 'Item B', 'Item C'],
+        ['2', 'Item 2', 'Item 3'],
+        ['B', 'Item B', 'Item C'],
+        ['3', 'Item 2', 'Item 3'],
+        ['C', 'Item B', 'Item C'],
+      ]}"
+      :maxDisplay="3"
+      @selected="activeIndex = $event"
     >
     </BaseList>
     <v-text-field
