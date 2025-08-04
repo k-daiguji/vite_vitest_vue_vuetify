@@ -28,7 +28,5 @@ const { enabled = true } = defineProps<{
 <style scoped>
 .lists {
   max-height: calc(var(--regular-height) * v-bind(maxDisplay) + 1px);
-  overflow: auto;
-  scrollbar-gutter: stable;
 }
 </style>
