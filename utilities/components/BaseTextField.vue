@@ -10,7 +10,9 @@ const { validators = [] } = defineProps<{
 
 const error = computed(() => {
   try {
-    validators.forEach(validator => validator.validate(input.value));
+    validators.forEach(validator => {
+      validator.validate(input.value);
+    });
     return "";
   } catch (error) {
     return error instanceof Error ? error.message : "Unknown validation error";
