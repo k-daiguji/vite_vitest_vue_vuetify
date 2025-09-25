@@ -9,7 +9,7 @@
   },
   "scripts": {
     "build": "npm run type-check && vite build && cp ./client/main.ts ./dist/main.js && cp -r ./client/@assets ./dist/",
-    "start": "npm-run-all2 --parallel start:vite --race start:electron",
+    "start": "npm-run-all --parallel start:vite --race start:electron",
     "start:electron": "set NODE_ENV=development && electron .",
     "start:vite": "vite",
     "test": "vitest",
@@ -18,23 +18,23 @@
     "check": "biome check --write client plugins type_extensions utilities"
   },
   "dependencies": {
-    "electron": "^38.1.0",
-    "vue": "^3.5.21"
+    "electron": "^38.1.2",
+    "vue": "^3.5.22"
   },
   "devDependencies": {
     "@biomejs/biome": "^2.2.4",
     "@mdi/font": "^7.4.47",
-    "@playwright/test": "^1.55.0",
-    "@types/node": "^24.4.0",
+    "@playwright/test": "^1.55.1",
+    "@types/node": "^24.5.2",
     "@vitejs/plugin-vue": "^6.0.1",
     "@vue/test-utils": "^2.4.6",
     "@vue/tsconfig": "^0.8.1",
     "happy-dom": "^18.0.1",
-    "npm-run-all2": "^8.0.4",
+    "npm-run-all": "^4.1.5",
     "typescript": "^5.9.2",
-    "vite": "^7.1.5",
+    "vite": "^7.1.7",
     "vitest": "^3.2.4",
-    "vue-tsc": "^3.0.7",
-    "vuetify": "^3.10.0"
+    "vue-tsc": "^3.0.8",
+    "vuetify": "^3.10.3"
   }
 }
