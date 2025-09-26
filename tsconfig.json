@@ -1,5 +1,5 @@
 {
-  "include": ["env.d.ts", "client", "plugins", "type_extensions", "utilities"],
+  "include": ["env.d.ts", "common", "client", "plugins", "type_extensions"],
   "compilerOptions": {
     "allowImportingTsExtensions": true,
     "baseUrl": ".",

@@ -1,8 +1,8 @@
 import { mount } from "@vue/test-utils";
 import { describe, test } from "vitest";
 
-import Testee from "@/utilities/src/components/BaseTextField.vue";
-import type { Validator } from "@/utilities/src/types/validator";
+import Testee from "@/common/src/components/BaseTextField.vue";
+import type { Validator } from "@/common/src/types/validator";
 
 describe("Input field", (): void => {
   test("Mounted", ({ expect }): void => {
