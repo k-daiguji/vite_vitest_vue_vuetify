@@ -1,4 +1,4 @@
-import type { Pixel } from "@/utilities/src/types/pixel";
+import type { Pixel } from "@/common/src/types/pixel";
 
 export class NumberPixel implements Pixel {
   private readonly _value;

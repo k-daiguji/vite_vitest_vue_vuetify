@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import type { dialogSize } from "@/utilities/src/constants/dialog";
+import type { dialogSize } from "@/common/src/constants/dialog";
 
 const isVisible = defineModel<boolean>({ required: true });
 const { closableOutside = false, width = "auto" } = defineProps<{

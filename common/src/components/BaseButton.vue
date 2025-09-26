@@ -1,8 +1,8 @@
 <script setup lang="ts">
 import { computed } from "vue";
 
-import BaseIcon from "@/utilities/src/components/BaseIcon.vue";
-import type { icon } from "@/utilities/src/constants/icon";
+import BaseIcon from "@/common/src/components/BaseIcon.vue";
+import type { icon } from "@/common/src/constants/icon";
 
 const { enabled = true, rounded } = defineProps<{
   enabled?: boolean;
