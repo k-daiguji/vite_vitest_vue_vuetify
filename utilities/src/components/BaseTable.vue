@@ -1,8 +1,8 @@
 <script setup lang="ts">
 import { computed } from "vue";
 
-import type { Pixel } from "@/utilities/types/pixel";
-import type { Table } from "@/utilities/types/table";
+import type { Pixel } from "@/utilities/src/types/pixel";
+import type { Table } from "@/utilities/src/types/table";
 
 const { maxHeight } = defineProps<{ table: Table; maxHeight: Pixel }>();
 

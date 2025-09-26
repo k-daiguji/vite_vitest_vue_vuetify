@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { computed, useTemplateRef } from "vue";
 
-import { useScroll } from "@/utilities/composables/useScroll";
+import { useScroll } from "@/utilities/src/composables/useScroll";
 
 const { body, enabled = true } = defineProps<{
   body: { activeIndex: number; rows: string[][] };
