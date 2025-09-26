@@ -1,9 +1,9 @@
 import { mount } from "@vue/test-utils";
 import { test } from "vitest";
 
-import BaseTable from "@/utilities/components/BaseTable.vue";
-import type { Pixel } from "@/utilities/types/pixel";
-import type { Table } from "@/utilities/types/table";
+import BaseTable from "@/utilities/src/components/BaseTable.vue";
+import type { Pixel } from "@/utilities/src/types/pixel";
+import type { Table } from "@/utilities/src/types/table";
 
 test("Table renders headers and bodies correctly.", ({ expect }) => {
   const maxHeight: Pixel = { value: "100px" };

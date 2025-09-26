@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import type { icon } from "@/utilities/constants/icon";
+import type { icon } from "@/utilities/src/constants/icon";
 
 const { enabled = true } = defineProps<{
   icon: (typeof icon)[keyof typeof icon];

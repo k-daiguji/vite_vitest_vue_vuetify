@@ -1,7 +1,7 @@
 import { describe, test } from "vitest";
 import { computed, defineComponent, nextTick } from "vue";
 
-import { useSection } from "@/utilities/composables/useAccordion";
+import { useSection } from "@/utilities/src/composables/useAccordion";
 
 const aEnabled = computed(() => true);
 const bodyA = defineComponent({});

@@ -2,8 +2,8 @@
 import type { Component, ComputedRef } from "vue";
 import { watch } from "vue";
 
-import Icon from "@/utilities/components/BaseIcon.vue";
-import { icon } from "@/utilities/constants/icon";
+import Icon from "@/utilities/src/components/BaseIcon.vue";
+import { icon } from "@/utilities/src/constants/icon";
 
 const activeTitle = defineModel<string>({ required: true });
 const { enabled = true } = defineProps<{
