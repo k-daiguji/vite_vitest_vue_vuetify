@@ -18,23 +18,23 @@
     "check": "biome check --write common editor type_extensions"
   },
   "dependencies": {
-    "electron": "^38.1.2",
+    "electron": "^38.2.1",
     "vue": "^3.5.22"
   },
   "devDependencies": {
-    "@biomejs/biome": "^2.2.4",
+    "@biomejs/biome": "^2.2.5",
     "@mdi/font": "^7.4.47",
     "@playwright/test": "^1.55.1",
-    "@types/node": "^24.5.2",
+    "@types/node": "^24.6.2",
     "@vitejs/plugin-vue": "^6.0.1",
     "@vue/test-utils": "^2.4.6",
     "@vue/tsconfig": "^0.8.1",
-    "happy-dom": "^18.0.1",
+    "happy-dom": "^19.0.2",
     "npm-run-all": "^4.1.5",
-    "typescript": "^5.9.2",
-    "vite": "^7.1.7",
+    "typescript": "^5.9.3",
+    "vite": "^7.1.9",
     "vitest": "^3.2.4",
-    "vue-tsc": "^3.0.8",
-    "vuetify": "^3.10.3"
+    "vue-tsc": "^3.1.0",
+    "vuetify": "^3.10.4"
   }
 }
