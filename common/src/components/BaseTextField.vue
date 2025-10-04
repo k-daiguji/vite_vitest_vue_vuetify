@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { computed } from "vue";
-import type { Validator } from "@/common/src/types/validator";
+import type { Validator } from "@/common/types/validator";
 
 const input = defineModel<string>({ required: true });
 const { validators = [] } = defineProps<{

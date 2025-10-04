@@ -1,6 +1,6 @@
 import { describe, test } from "vitest";
 
-import { NumberPixel } from "@/common/src/models/pixelNumber";
+import { NumberPixel } from "@/common/models/pixelNumber";
 
 describe("Throw errors for invalid pixel values", () => {
   test("NumberPixel should throw TypeError for non-integer values", ({

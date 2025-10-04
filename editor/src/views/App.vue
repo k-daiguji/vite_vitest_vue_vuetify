@@ -11,7 +11,7 @@ const title = ref("App");
 <style>
 @import "@mdi/font/css/materialdesignicons.css";
 @import "vuetify/styles";
-@import "@/common/src/css/global.css";
+@import "@/common/css/global.css";
 
 .root {
   --bg-color: #f0f0f0;
