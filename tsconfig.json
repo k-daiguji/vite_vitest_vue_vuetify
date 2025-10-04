@@ -1,5 +1,5 @@
 {
-  "include": ["env.d.ts", "common", "editor", "plugins", "type_extensions"],
+  "include": ["env.d.ts", "common", "editor", "type_extensions"],
   "compilerOptions": {
     "allowImportingTsExtensions": true,
     "baseUrl": ".",
@@ -20,7 +20,8 @@
     "noPropertyAccessFromIndexSignature": true,
     "outDir": "dist",
     "paths": {
-      "@/*": ["./*"]
+      "@/common/*": ["./common/src/*"],
+      "@/editor/*": ["./editor/src/*"]
     },
     "removeComments": true,
     "strict": true,

@@ -1,6 +1,6 @@
 import { createApp } from "vue";
 
-import App from "@/editor/src/views/App.vue";
-import { vuetify } from "@/plugins/vuetify";
+import { vuetify } from "@/common/plugins/vuetify";
+import App from "@/editor/views/App.vue";
 
 createApp(App).use(vuetify).mount("#app");

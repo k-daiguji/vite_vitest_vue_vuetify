@@ -15,7 +15,7 @@
     "test": "vitest",
     "test:e2e": "playwright test --project=chromium",
     "type-check": "vue-tsc --noEmit --skipLibCheck",
-    "check": "biome check --write common editor plugins type_extensions"
+    "check": "biome check --write common editor type_extensions"
   },
   "dependencies": {
     "electron": "^38.1.2",

@@ -1,7 +1,7 @@
 import { mount } from "@vue/test-utils";
 import { describe, test } from "vitest";
 
-import Testee from "@/common/src/components/BaseList.vue";
+import Testee from "@/common/components/BaseList.vue";
 
 const rows = [
   ["Item 1", "Item 2", "Item 3"],

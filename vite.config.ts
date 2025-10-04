@@ -7,7 +7,8 @@ export default defineConfig({
   plugins: [vue()],
   resolve: {
     alias: {
-      "@": `${__dirname}`,
+      "@/common": `${__dirname}/common/src`,
+      "@/editor": `${__dirname}/editor/src`,
     },
   },
 });
